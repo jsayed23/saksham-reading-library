@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For educators — Saksham</title>
+<meta name="description" content="How to use Saksham with neurodivergent students. Quick start, classroom routine, differentiation guide, and privacy notes — written for teachers who already have too much to do." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-contrast="cream" data-font="atkinson" data-size="m" data-motion="full">
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Saksham home">
+      <span class="brand-mark" aria-hidden="true">स</span>
+      <span>Saksham</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" id="navToggle">☰ Menu</button>
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
+      <a href="index.html">Library</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="educators.html" class="current">For educators</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="page-intro">
+    <div class="container">
+      <h1>For educators</h1>
+      <p class="lede">Saksham is a small reading library that students can configure to their own brain — font, contrast, pace, motion, and audio — before they begin. This page is the dashboard you'd see for a class using it, plus everything you need to use it yourself.</p>
+    </div>
+  </div>
+
+  <!-- TEACHER DASHBOARD (mock class data demonstrating the differentiation Saksham enables) -->
+  <div class="container">
+    <div class="teacher-panel">
+      <div class="head">
+        <h2>Class dashboard</h2>
+        <span class="class-meta">Grade 6 · Section B · 6 students using Saksham today</span>
+      </div>
+      <div class="demo-note">
+        <strong>This is a demonstration with mock data.</strong> The real Saksham doesn't track students or upload any data. A teacher's view in practice would show what students choose to share on a shared classroom device — not surveillance. The columns below illustrate the kinds of differentiation Saksham reveals.
+      </div>
+
+      <table class="roster" aria-label="Class reading dashboard">
+        <thead>
+          <tr>
+            <th scope="col">Student</th>
+            <th scope="col">Their settings</th>
+            <th scope="col">Passages</th>
+            <th scope="col">Notes for you</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-blue">A</span>Aarav</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag accent">OpenDyslexic</span>
+              <span class="tag">Pace 0.7×</span>
+              <span class="tag warm">Audio on</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 75%"></span></span> 6 / 8
+            </td>
+            <td data-lbl="Notes">Reads slower, uses audio sync. Doing well at his own pace.</td>
+          </tr>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-warm">P</span>Priya</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag">Atkinson · XL</span>
+              <span class="tag accent">High contrast</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 50%"></span></span> 4 / 8
+            </td>
+            <td data-lbl="Notes">Visual sensitivity. Switched to high contrast on her own — leave it.</td>
+          </tr>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-green">D</span>Dhruv</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag">Lexend</span>
+              <span class="tag">Motion: Reduced</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 25%"></span></span> 2 / 8
+            </td>
+            <td data-lbl="Notes">ADHD. Reduced motion helps with overstimulation. Two passages in one sitting is a win.</td>
+          </tr>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-lav">M</span>Meera</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag">Atkinson</span>
+              <span class="tag accent">Dark theme</span>
+              <span class="tag warm">Audio on</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 100%"></span></span> 8 / 8
+            </td>
+            <td data-lbl="Notes">Finished the library. Ask if she'd like to suggest the next passages.</td>
+          </tr>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-rose">K</span>Kabir</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag accent">OpenDyslexic · L</span>
+              <span class="tag">Voice cues on</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 12.5%"></span></span> 1 / 8
+            </td>
+            <td data-lbl="Notes">Emerging reader. Voice cues are helping him navigate the interface.</td>
+          </tr>
+          <tr>
+            <td data-lbl="Student">
+              <div class="student"><span class="avatar av-sun">S</span>Sara</div>
+            </td>
+            <td data-lbl="Settings">
+              <span class="tag">Atkinson · M</span>
+              <span class="tag">Pace 1.2×</span>
+            </td>
+            <td data-lbl="Read">
+              <span class="progress-bar"><span class="fill" style="width: 62.5%"></span></span> 5 / 8
+            </td>
+            <td data-lbl="Notes">No diagnosed need. Just likes the calm interface. Reads above grade level.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose">
+
+      <h2>The fastest possible start</h2>
+      <ol>
+        <li>Open <a href="index.html">the library</a> on any device with a modern browser.</li>
+        <li>Hand it to the student.</li>
+        <li>Tell them: <em>"Change the font and the colors until reading feels okay. Then pick a passage."</em></li>
+      </ol>
+      <p>That's it. No accounts, no install, no signup, no data collection. Their settings save on the device they use.</p>
+
+      <h2>What's actually in the library</h2>
+      <p>Eight short passages — about three to four minutes each — organized into three categories: Stories, Science, and Sky &amp; stars. Reading level is "Easy" or "Medium." All eight are appropriate for roughly 10–16 year olds. Several are set in Indian contexts (Mumbai, banyan trees, taal music, nakshatras) — chosen because the original research interviews were with Indian educators and families.</p>
+
+      <h2>A 30-minute classroom routine</h2>
+      <ol>
+        <li><strong>Minutes 0–5.</strong> Let students set up their preferences. Tell them they can change anything later, and that the settings save automatically. Resist the urge to choose for them — this <em>is</em> the lesson.</li>
+        <li><strong>Minutes 5–20.</strong> Each student picks one passage and reads it. Audio is optional. They can change settings mid-passage. Your job is to be available for questions, not to monitor pace.</li>
+        <li><strong>Minutes 20–30.</strong> If you want a writing or discussion follow-up, ask one prompt per passage. For example: <em>"What's one thing you remember from the banyan tree?"</em> or <em>"What did the lamp lighter teach his granddaughter without saying it?"</em></li>
+      </ol>
+
+      <h2>How to differentiate without building scaffolds</h2>
+      <p>Each setting in Saksham covers a kind of differentiation you would otherwise be doing manually:</p>
+      <ul>
+        <li><strong>Students with dyslexia</strong> can switch to OpenDyslexic font and turn on read-aloud. The current word will be highlighted as it's spoken.</li>
+        <li><strong>Students with ADHD</strong> can turn motion to "Reduced" or "None" to remove transitions, and switch to high-contrast theme to reduce visual noise.</li>
+        <li><strong>Students with autism</strong> who shut down at bright screens can switch to warm cream or dark theme.</li>
+        <li><strong>Students with low vision</strong> can use the Atkinson Hyperlegible font at Large or Extra Large size.</li>
+        <li><strong>Students who are still emerging readers</strong> can read alongside audio at a slower pace (0.5–0.7×) and see each word highlight in real time.</li>
+      </ul>
+      <p>You don't need to know which student needs which. They figure it out. That's the design.</p>
+
+      <h2>Privacy</h2>
+      <div class="panel">
+        <p><strong>No data leaves the device.</strong> Saksham does not have a backend, an account system, or any analytics. All settings and progress are stored in the student's browser using <code>localStorage</code>. You can verify this yourself by opening the browser's network tab — nothing is uploaded.</p>
+        <p>This matters in school contexts. You can hand Saksham to a minor without parental consent forms because there is no data to consent to share.</p>
+      </div>
+
+      <h2>What Saksham is not</h2>
+      <ul>
+        <li>It is <em>not</em> a curriculum. It is a calm reading surface.</li>
+        <li>It is <em>not</em> a measurement tool. There are no scores, no time-on-task, no comparison to other students. By design.</li>
+        <li>It is <em>not</em> a replacement for an accessibility specialist. It just removes one small piece of improvisation from your day.</li>
+      </ul>
+
+      <h2>The conversation behind the app</h2>
+      <blockquote>
+        I have 40 students and no tools designed for differentiated instruction. I'm constantly improvising.
+        <cite>— Meera, inclusive classroom teacher, from the original Saksham research interviews</cite>
+      </blockquote>
+      <p>If you are Meera or know someone like her, this is built for you. The published research that this app implements is in the <a href="https://issuu.com/calpolytaga/docs/cal_poly_taga_2026/132" target="_blank" rel="noopener">Cal Poly TAGA 2026 Journal</a>.</p>
+
+      <h2>Suggestions, problems, ideas</h2>
+      <p>If you actually use this with students, I'd really like to hear how it went. Email <a href="mailto:sayedjasmine@gmail.com">sayedjasmine@gmail.com</a> — especially if there's a passage you wish were there, or a setting that didn't work the way you needed.</p>
+
+      <hr class="divider">
+      <p><a href="index.html">← Back to the library</a></p>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>Saksham — capable learning, your way.</div>
+    <div class="footer-links">
+      <a href="achievements.html">Achievements</a>
+      <a href="educators.html">For educators</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/jsayed23/miniproject2" target="_blank" rel="noopener">Source</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Apply saved preferences across the whole site
+  try {
+    const raw = localStorage.getItem('saksham:v2');
+    if (raw) {
+      const s = JSON.parse(raw);
+      if (s.font) document.body.dataset.font = s.font;
+      if (s.size) document.body.dataset.size = s.size;
+      if (s.contrast) document.body.dataset.contrast = s.contrast;
+      if (s.motion) document.body.dataset.motion = s.motion;
+    }
+  } catch (e) {}
+
+  // Mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('primaryNav');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+</script>
+</body>
+</html>

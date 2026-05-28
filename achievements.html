@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Achievements — Saksham</title>
+<meta name="description" content="Your personal milestones. No comparison, no leaderboards, no ranks — only your own reading journey." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-contrast="cream" data-font="atkinson" data-size="m" data-motion="full">
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Saksham home">
+      <span class="brand-mark" aria-hidden="true">स</span>
+      <span>Saksham</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" id="navToggle">☰ Menu</button>
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
+      <a href="index.html">Library</a>
+      <a href="achievements.html" class="current">Achievements</a>
+      <a href="educators.html">For educators</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="page-intro">
+    <div class="container">
+      <h1>Your milestones</h1>
+      <p class="lede">Small markers of your own reading journey. There's no leaderboard, no comparison, and no one else can see these. Some unlock when you read; some unlock when you try a new setting that might help you.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose">
+      <div id="summary" class="panel"></div>
+    </div>
+
+    <div class="badge-grid" id="badgeGrid" role="list"></div>
+
+    <p style="margin: 2rem 0; text-align: center;">
+      <a href="index.html" class="btn ghost">← Back to the library</a>
+    </p>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>Saksham — capable learning, your way.</div>
+    <div class="footer-links">
+      <a href="achievements.html">Achievements</a>
+      <a href="educators.html">For educators</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/jsayed23/miniproject2" target="_blank" rel="noopener">Source</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Apply saved preferences across the whole site */
+let state = { font: 'atkinson', size: 'm', contrast: 'cream', motion: 'full', read: {}, achievements: {}, triedFonts: ['atkinson'], triedContrasts: ['cream'], usedAudioOnce: false, minPace: 0.9 };
+try {
+  const raw = localStorage.getItem('saksham:v3') || localStorage.getItem('saksham:v2');
+  if (raw) {
+    const s = JSON.parse(raw);
+    Object.assign(state, s);
+    state.read = s.read || {};
+    state.achievements = s.achievements || {};
+    state.triedFonts = s.triedFonts || ['atkinson'];
+    state.triedContrasts = s.triedContrasts || ['cream'];
+  }
+} catch (e) {}
+document.body.dataset.font = state.font;
+document.body.dataset.size = state.size;
+document.body.dataset.contrast = state.contrast;
+document.body.dataset.motion = state.motion;
+
+const ACHIEVEMENTS = [
+  { id: 'first-read',     icon: '📖', title: 'First passage',     desc: 'You read your first passage. Welcome to the library.' },
+  { id: 'three-read',     icon: '📚', title: 'Three down',        desc: 'Three passages read. That counts as a habit.' },
+  { id: 'all-read',       icon: '🎓', title: 'The whole library', desc: 'You read every passage. Done your way.' },
+  { id: 'tried-opendys',  icon: '🅰️', title: 'Letter explorer',  desc: 'You tried the OpenDyslexic font.' },
+  { id: 'tried-dark',     icon: '🌙', title: 'Night reader',      desc: 'You tried the dark theme.' },
+  { id: 'tried-soft',     icon: '🌧', title: 'Calm reader',       desc: 'You tried the soft blue theme.' },
+  { id: 'tried-high',     icon: '✨', title: 'Maximum contrast',  desc: 'You tried the high-contrast theme.' },
+  { id: 'used-audio',     icon: '🔊', title: 'Read along',        desc: 'You used read-aloud while reading.' },
+  { id: 'slow-pace',      icon: '🐢', title: 'Slow and steady',   desc: 'You read at 0.7× or slower. Patient with yourself.' },
+  { id: 'all-cats',       icon: '🗺',  title: 'Curious mind',     desc: 'You read from all three categories.' }
+];
+
+const unlockedCount = Object.keys(state.achievements).length;
+const total = ACHIEVEMENTS.length;
+
+document.getElementById('summary').innerHTML = `
+  <p style="margin: 0;"><strong>${unlockedCount} of ${total}</strong> milestones reached.
+  ${unlockedCount === 0 ? "Open a passage, try a new font or theme, and the first one will appear here." :
+    unlockedCount < total ? "Keep going at your own pace. The rest will arrive when you're ready." :
+    "You've reached every milestone in this build. Thank you for trying Saksham."}</p>
+`;
+
+const grid = document.getElementById('badgeGrid');
+grid.innerHTML = ACHIEVEMENTS.map(a => {
+  const unlockedAt = state.achievements[a.id];
+  const unlocked = !!unlockedAt;
+  const when = unlocked ? new Date(unlockedAt).toLocaleDateString() : '';
+  return `
+    <div class="badge ${unlocked ? 'unlocked' : 'locked'}" role="listitem">
+      <div class="badge-icon" aria-hidden="true">${a.icon}</div>
+      <div>
+        <h3>${a.title}</h3>
+        <p>${a.desc}</p>
+        ${unlocked ? `<span class="when">Unlocked ${when}</span>` : ''}
+      </div>
+    </div>
+  `;
+}).join('');
+
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('primaryNav');
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+}
+</script>
+
+</body>
+</html>

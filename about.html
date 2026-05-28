@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Saksham</title>
+<meta name="description" content="Saksham means capable in Hindi. A brief account of what this is, why it exists, and how it's built." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-contrast="cream" data-font="atkinson" data-size="m" data-motion="full">
+
+<a href="#main" class="skip">Skip to main content</a>
+
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+    <a href="index.html" class="brand" aria-label="Saksham home">
+      <span class="brand-mark" aria-hidden="true">स</span>
+      <span>Saksham</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" id="navToggle">☰ Menu</button>
+    <nav class="nav-links" id="primaryNav" aria-label="Primary">
+      <a href="index.html">Library</a>
+      <a href="achievements.html">Achievements</a>
+      <a href="educators.html">For educators</a>
+      <a href="about.html" class="current">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <div class="page-intro">
+    <div class="container">
+      <h1>About Saksham</h1>
+      <p class="lede"><em>Saksham</em> means <em>capable</em> in Hindi. The app is a small reading library built around the idea that the most important interaction a neurodivergent reader has with a tool is the moment they realize the tool will change to fit them.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose">
+
+      <h2>What this is</h2>
+      <p>A reading library of eight short passages, with a settings panel that lets the reader choose font, text size, contrast theme, reading pace, motion level, and whether to hear the words read aloud. When read-aloud is on, the current word is highlighted in sync with the spoken voice. Settings save in the browser. Nothing is uploaded, no account is needed, and no progress is shared.</p>
+
+      <h2>Why it exists</h2>
+      <p>This site is the working implementation of a 2024–2025 research project I authored at Cal Poly: <em>Designing for Neurodiversity: Accessibility in Educational Technology for India's Future Learners.</em> The paper was published in the <a href="https://issuu.com/calpolytaga/docs/cal_poly_taga_2026/132" target="_blank" rel="noopener">Cal Poly TAGA 2026 Journal</a>. The full case study lives on <a href="https://jasminesayedportfolio.com/saksham.html" target="_blank" rel="noopener">my portfolio</a>; the original Figma prototype is <a href="https://www.figma.com/proto/vOScugmTaA0yo2M25I105V/Saksham-App-Design-File?content-scaling=fixed&kind=proto&node-id=2-12798&page-id=0%3A1&scaling=scale-down" target="_blank" rel="noopener">here</a>.</p>
+
+      <p>The research came out of interviews with educators and parents of neurodivergent children in India. Four findings shaped this build:</p>
+      <ul>
+        <li><strong>Sensory overwhelm is access, not preference.</strong> Warm cream is the default. No autoplay, no notifications, no animation that the reader didn't ask for. Motion can be turned off entirely.</li>
+        <li><strong>One modality isn't enough.</strong> Read-aloud is word-synchronized — not just narration. The current word is visually highlighted as it's spoken.</li>
+        <li><strong>Control transforms anxiety into confidence.</strong> Settings are not buried in a menu. They sit at the top of the library, open by default for first-time visitors.</li>
+        <li><strong>Comparison kills motivation.</strong> There are no streaks, no scores, no leaderboards. The progress note counts only the reader's own work.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <p>Plain HTML, CSS, and JavaScript. No framework, no build step, no backend. Fonts load from CDN (Atkinson Hyperlegible, Lexend, and Poppins from Google Fonts; OpenDyslexic from cdnfonts). All preferences and progress sit in <code>localStorage</code>. Read-aloud uses the browser's built-in Web Speech API; the word-level highlight is driven by the <code>boundary</code> event.</p>
+
+      <div class="panel">
+        <p><strong>Privacy claim, verifiable.</strong> Saksham has no analytics, no telemetry, no tracking, and no server. You can prove this by opening your browser's network tab and watching what happens when you use the app: only the static files and the fonts load. Nothing else.</p>
+      </div>
+
+      <h2>Course context</h2>
+      <p>The browser implementation was built for HCDE 530 (Computational Methods in Human Centered Design and Engineering) at the University of Washington, Spring 2026, as the Mini Project 2 final submission. The competency claim is in the repo as <code>mp2.md</code>; the reflection is in <code>reflection.md</code>.</p>
+
+      <h2>Author</h2>
+      <p>Jasmine Sayed. UX designer and researcher. <a href="https://jasminesayedportfolio.com" target="_blank" rel="noopener">Portfolio</a> · <a href="https://www.linkedin.com/in/sayedjasmine" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:sayedjasmine@gmail.com">sayedjasmine@gmail.com</a></p>
+
+      <hr class="divider">
+      <p><a href="index.html">← Back to the library</a></p>
+
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>Saksham — capable learning, your way.</div>
+    <div class="footer-links">
+      <a href="achievements.html">Achievements</a>
+      <a href="educators.html">For educators</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/jsayed23/miniproject2" target="_blank" rel="noopener">Source</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Apply saved preferences across the whole site
+  try {
+    const raw = localStorage.getItem('saksham:v2');
+    if (raw) {
+      const s = JSON.parse(raw);
+      if (s.font) document.body.dataset.font = s.font;
+      if (s.size) document.body.dataset.size = s.size;
+      if (s.contrast) document.body.dataset.contrast = s.contrast;
+      if (s.motion) document.body.dataset.motion = s.motion;
+    }
+  } catch (e) {}
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('primaryNav');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+</script>
+</body>
+</html>
