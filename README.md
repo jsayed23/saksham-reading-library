@@ -1,6 +1,6 @@
 # Saksham
 
-**An accessible reading library for neurodivergent learners.** *Saksham* means *capable* in Hindi. Set the font, contrast, pace, motion, and audio to whatever your brain wants. Pick a passage. Read at your own speed. No accounts, no streaks, no comparisons. Everything stays in your browser.
+**An accessible reading library for neurodivergent learners.** *Saksham* means *capable* in Hindi. Set the font, contrast, pace, motion, and audio to whatever your brain wants. Pick a passage. Read at your own speed in **any of six languages — English, Hindi, Bengali, Marathi, Gujarati, or Telugu**. No accounts, no streaks, no comparisons. Everything stays in your browser.
 
 This is the working web implementation of the Saksham design originally published in the [Cal Poly TAGA 2026 Journal](https://issuu.com/calpolytaga/docs/cal_poly_taga_2026/132). The visual language mirrors the original [Figma prototype](https://www.figma.com/proto/vOScugmTaA0yo2M25I105V/Saksham-App-Design-File) — onboarding, category cards, soft brand palette — adapted from mobile screens to a responsive multi-page website.
 
@@ -13,7 +13,7 @@ A four-page static website built around a working reading tool:
 
 | Page | What it does |
 |---|---|
-| `index.html` | **Library + reader.** First-time visitors get a setup screen (name + avatar color). Returning visitors get a clean hero with greeting, reading-progress snapshot, and a single "Continue reading [next title]" CTA. Below the hero: three category sections (Stories, Science, Sky & Stars) — each with its own icon, colored underline, and italic tagline. Tapping a passage opens the book-like reader. |
+| `index.html` | **Library + reader.** First-time visitors get a setup screen (name + animal avatar). Returning visitors get a warm reading-room hero — a little shelf of book spines, a greeting, a reading-progress snapshot, and a single "Continue reading [next title]" CTA. Below the hero: three category sections (Stories, Science, Sky & Stars) styled as wooden shelves, with passage cards standing on them like books. Tapping a passage opens the book-like reader. A language picker switches the whole library between six languages. |
 | `achievements.html` | A grid of 10 self-paced badges. No comparison, no leaderboard — just personal markers for reading milestones, font exploration, theme exploration, and pace. |
 | `educators.html` | Teacher-dashboard demo (mock Grade 6 Section B roster showing six students with varied settings) plus a practical classroom guide and privacy note. |
 | `about.html` | Brief account of the research lineage and how the build is constructed. |
@@ -53,6 +53,16 @@ The original Figma prototype shows a Sign Up / Log In flow and a 60-minute-per-d
 
 Both decisions are documented in `mp2.md`.
 
+## Reads in six languages
+
+The language picker (under **Filter passages → Language**) genuinely switches the whole experience — not just a label. Choosing বাংলা, हिन्दी, मराठी, ગુજરાતી, or తెలుగు re-renders every interface string *and* every reading passage (title, text, vocabulary, and reflection prompt) into that language, and read-aloud requests the matching voice (e.g. `hi-IN`, `bn-IN`) so the audio is spoken in the right language where the reader's device has a voice for it. The choice is saved per device, so a learner returns to their language automatically.
+
+All eight passages exist in all six languages — the data lives in `i18n.js` as a `SAKSHAM_STRINGS` table (interface) and a `SAKSHAM_PASSAGES` array (content), each keyed by language code.
+
+> **A note on the translations:** the five non-English versions were drafted with AI assistance. They are faithful in meaning, but a native speaker should proofread them for register and idiom before real classroom use. This is documented as a known limitation rather than hidden.
+
+The other two filters work too: **Grade level** shows only passages whose recommended band includes the chosen grade, and **Learning needs** (dyslexia, ADHD, autism, speech, visual/motor) narrows to passages tagged for that need, with a short suggestion for which settings to try.
+
 ## Who it's for
 
 **Primary users:** neurodivergent learners aged roughly 10–16 in Indian classrooms — readers with dyslexia, ADHD, or autism, or any combination — who currently learn through mainstream EdTech platforms like **Byju's, Duolingo, and government e-learning apps** that offer no cognitive adaptation. Those interfaces are visually overloaded and comparison-driven; they trigger sensory overwhelm and shutdown, or get abandoned entirely.
@@ -85,6 +95,7 @@ miniproject2/
 ├── educators.html      Teacher dashboard + classroom guide
 ├── about.html          About the project
 ├── styles.css          Shared design system
+├── i18n.js             Six-language interface strings + translated passages
 ├── README.md           This file
 ├── mp2.md              HCDE 530 competency claim
 └── reflection.md       500-word Canvas reflection

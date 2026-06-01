@@ -1,5 +1,7 @@
 # MP2b — 500-word Reflection
 
+*(Paste the four sections below into the Canvas submission box after the two URLs.)*
+
 ---
 
 **What did you build?**

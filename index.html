@@ -23,12 +23,12 @@
       <span class="brand-mark" aria-hidden="true">स</span>
       <span>Saksham</span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" id="navToggle">☰ Menu</button>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" id="navToggle" data-i18n="menu">☰ Menu</button>
     <nav class="nav-links" id="primaryNav" aria-label="Primary">
-      <a href="index.html" class="current" data-voice="Library">Library</a>
-      <a href="achievements.html" data-voice="Achievements">Achievements</a>
-      <a href="educators.html" data-voice="For educators">For educators</a>
-      <a href="about.html" data-voice="About">About</a>
+      <a href="index.html" class="current" data-voice="Library" data-i18n="nav_library">Library</a>
+      <a href="achievements.html" data-voice="Achievements" data-i18n="nav_achievements">Achievements</a>
+      <a href="educators.html" data-voice="For educators" data-i18n="nav_educators">For educators</a>
+      <a href="about.html" data-voice="About" data-i18n="nav_about">About</a>
     </nav>
   </div>
 </header>
@@ -41,26 +41,26 @@
   <section class="screen" id="screen-setup" aria-labelledby="setup-title" hidden>
     <div class="setup">
       <div class="setup-card">
-        <h1 id="setup-title">Saksham — inclusive learning for all.</h1>
+        <h1 id="setup-title" data-i18n="setup_title">Saksham — inclusive learning for all.</h1>
         <p class="meaning">सक्षम · capable</p>
-        <p class="lede">Empowering every learner, regardless of ability or background. Let's set things up for the way <em>your</em> brain works. Nothing here is permanent — you can change any of it later.</p>
+        <p class="lede" data-i18n="setup_lede">Empowering every learner, regardless of ability or background. Let's set things up for the way your brain works. Nothing here is permanent — you can change any of it later.</p>
 
-        <label for="setupName">What should I call you?</label>
-        <input id="setupName" type="text" placeholder="Just a first name is fine" maxlength="24" autocomplete="off" data-voice="What should I call you?" />
+        <label for="setupName" data-i18n="setup_name_label">What should I call you?</label>
+        <input id="setupName" type="text" placeholder="Just a first name is fine" data-i18n-ph="setup_name_ph" maxlength="24" autocomplete="off" data-voice="What should I call you?" />
 
-        <label>Pick a color for your avatar</label>
+        <label data-i18n="setup_avatar_label">Pick an avatar</label>
         <div class="avatar-picks" role="radiogroup" aria-label="Avatar color">
-          <button type="button" class="avatar-pick" data-avatar="blue" aria-pressed="true" data-voice="Blue avatar"><span class="avatar av-blue" aria-hidden="true">A</span>Blue</button>
-          <button type="button" class="avatar-pick" data-avatar="green" aria-pressed="false" data-voice="Green avatar"><span class="avatar av-green" aria-hidden="true">A</span>Green</button>
-          <button type="button" class="avatar-pick" data-avatar="warm" aria-pressed="false" data-voice="Orange avatar"><span class="avatar av-warm" aria-hidden="true">A</span>Orange</button>
-          <button type="button" class="avatar-pick" data-avatar="sun" aria-pressed="false" data-voice="Yellow avatar"><span class="avatar av-sun" aria-hidden="true">A</span>Yellow</button>
-          <button type="button" class="avatar-pick" data-avatar="lav" aria-pressed="false" data-voice="Purple avatar"><span class="avatar av-lav" aria-hidden="true">A</span>Purple</button>
-          <button type="button" class="avatar-pick" data-avatar="rose" aria-pressed="false" data-voice="Rose avatar"><span class="avatar av-rose" aria-hidden="true">A</span>Rose</button>
+          <button type="button" class="avatar-pick" data-avatar="blue" aria-pressed="true" data-voice="Fox avatar"><span class="avatar av-blue" aria-hidden="true">🦊</span><span data-i18n="av_blue">Fox</span></button>
+          <button type="button" class="avatar-pick" data-avatar="green" aria-pressed="false" data-voice="Turtle avatar"><span class="avatar av-green" aria-hidden="true">🐢</span><span data-i18n="av_green">Turtle</span></button>
+          <button type="button" class="avatar-pick" data-avatar="warm" aria-pressed="false" data-voice="Butterfly avatar"><span class="avatar av-warm" aria-hidden="true">🦋</span><span data-i18n="av_warm">Butterfly</span></button>
+          <button type="button" class="avatar-pick" data-avatar="sun" aria-pressed="false" data-voice="Bee avatar"><span class="avatar av-sun" aria-hidden="true">🐝</span><span data-i18n="av_sun">Bee</span></button>
+          <button type="button" class="avatar-pick" data-avatar="lav" aria-pressed="false" data-voice="Owl avatar"><span class="avatar av-lav" aria-hidden="true">🦉</span><span data-i18n="av_lav">Owl</span></button>
+          <button type="button" class="avatar-pick" data-avatar="rose" aria-pressed="false" data-voice="Panda avatar"><span class="avatar av-rose" aria-hidden="true">🐼</span><span data-i18n="av_rose">Panda</span></button>
         </div>
 
         <div class="setup-actions">
-          <button type="button" class="btn" id="setupSubmit" data-voice="Open my library">Open my library →</button>
-          <button type="button" class="btn ghost" id="setupSkip" data-voice="Skip setup">Skip — just call me Reader</button>
+          <button type="button" class="btn" id="setupSubmit" data-voice="Open my library" data-i18n="setup_open">Open my library →</button>
+          <button type="button" class="btn ghost" id="setupSkip" data-voice="Skip setup" data-i18n="setup_skip">Skip — just call me Reader</button>
         </div>
         <div class="dots" aria-hidden="true">
           <span class="on"></span><span></span><span></span>
@@ -83,10 +83,12 @@
             <h1 id="home-title"><span id="helloName">Reader</span>.</h1>
             <p class="hero-sub" id="helloLine">Pick something to read at your own pace. Nothing here is timed, and your settings travel with you across every page.</p>
 
+
+            <div class="hero-books" aria-hidden="true"><span style="height:52px;background:#3D5CFF;"></span><span style="height:44px;background:#FF7C24;"></span><span style="height:56px;background:#2F8F6E;"></span><span style="height:40px;background:#E66B8E;"></span><span style="height:50px;background:#FFB400;"></span><span style="height:46px;background:#6E45B5;"></span><span style="height:38px;background:#3D5CFF;"></span><span style="height:54px;background:#2F8F6E;"></span><span style="height:48px;background:#FF7C24;"></span><span style="height:42px;background:#9B7BC9;"></span><span style="height:50px;background:#E66B8E;"></span></div>
             <div class="hero-progress">
               <div class="progress-row">
-                <span><strong id="snapRead">0</strong> of <span id="snapTotal">8</span> passages read</span>
-                <a href="achievements.html">Milestones →</a>
+                <span id="readCountLabel"></span>
+                <a href="achievements.html" data-i18n="milestones">Milestones →</a>
               </div>
               <div class="progress-bar" aria-hidden="true">
                 <div class="progress-fill" id="progressFill" style="width: 0%"></div>
@@ -95,8 +97,8 @@
 
             <div class="hero-actions">
               <button class="btn lg" id="continueBtn" data-voice="Continue reading">Continue reading →</button>
-              <button class="btn ghost" id="openPrefsBtn" data-voice="Reading preferences">⚙ Reading preferences</button>
-              <button class="edit-name-link" id="editName" data-voice="Change name">Not me? Change name</button>
+              <button class="btn ghost" id="openPrefsBtn" data-voice="Reading preferences" data-i18n="reading_prefs">⚙ Reading preferences</button>
+              <button class="edit-name-link" id="editName" data-voice="Change name" data-i18n="change_name">Not me? Change name</button>
             </div>
           </div>
 
@@ -108,25 +110,25 @@
     <section class="library-section">
       <div class="container">
         <div class="library-header">
-          <h2>Your library</h2>
+          <h2 data-i18n="your_library">Your library</h2>
           <div class="library-tools">
-            <button type="button" class="btn ghost" id="openFiltersBtn" data-voice="Filter passages">Filter passages</button>
+            <button type="button" class="btn ghost" id="openFiltersBtn" data-voice="Filter passages" data-i18n="filter_passages">Filter passages</button>
           </div>
         </div>
-        <p class="text-soft" style="margin: 0 0 1.5rem;">Eight short passages across three categories. Words with a dotted underline have definitions — tap them.</p>
+        <p class="text-soft" style="margin: 0 0 1.5rem;" data-i18n="library_intro">Short passages across three shelves. Words with a dotted underline have definitions — tap them.</p>
 
       <!-- Preferences (collapsed; opened by the hero's "Reading preferences" button) -->
       <details class="prefs" id="prefsPanel">
         <summary data-voice="Reading preferences">
-          <span>Reading preferences</span>
-          <span class="hint">Change anything. Every page remembers.</span>
+          <span data-i18n="prefs_title">Reading preferences</span>
+          <span class="hint" data-i18n="prefs_hint">Change anything. Every page remembers.</span>
           <span class="chev" aria-hidden="true">▾</span>
         </summary>
         <div class="prefs-body">
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Font</h4>
+              <h4 data-i18n="font">Font</h4>
               <span class="pref-value" id="lblFont">Atkinson Hyperlegible</span>
             </div>
             <div class="chips" role="radiogroup" aria-label="Font">
@@ -139,7 +141,7 @@
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Size</h4>
+              <h4 data-i18n="size">Size</h4>
               <span class="pref-value" id="lblSize">Medium</span>
             </div>
             <div class="chips" role="radiogroup" aria-label="Size">
@@ -151,40 +153,40 @@
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Theme</h4>
+              <h4 data-i18n="theme">Theme</h4>
               <span class="pref-value" id="lblContrast">Warm cream</span>
             </div>
             <div class="swatch-row" role="radiogroup" aria-label="Theme">
               <button class="swatch-btn" role="radio" aria-checked="true" aria-pressed="true" data-set="contrast" data-value="cream" data-voice="Warm cream theme">
-                <span class="sw" style="background:#FFFBF5;border-color:#E5DAC2;"></span>Cream
+                <span class="sw" style="background:#FFFBF5;border-color:#E5DAC2;"></span><span data-i18n="theme_cream">Cream</span>
               </button>
               <button class="swatch-btn" role="radio" aria-checked="false" aria-pressed="false" data-set="contrast" data-value="soft" data-voice="Soft blue theme">
-                <span class="sw" style="background:#F1F4FB;border-color:#D2DCEA;"></span>Soft
+                <span class="sw" style="background:#F1F4FB;border-color:#D2DCEA;"></span><span data-i18n="theme_soft">Soft</span>
               </button>
               <button class="swatch-btn" role="radio" aria-checked="false" aria-pressed="false" data-set="contrast" data-value="dark" data-voice="Dark theme">
-                <span class="sw" style="background:#14181F;border-color:#2A3140;"></span>Dark
+                <span class="sw" style="background:#14181F;border-color:#2A3140;"></span><span data-i18n="theme_dark">Dark</span>
               </button>
               <button class="swatch-btn" role="radio" aria-checked="false" aria-pressed="false" data-set="contrast" data-value="high" data-voice="High contrast theme">
-                <span class="sw" style="background:#000;border-color:#FFD301;"></span>High
+                <span class="sw" style="background:#000;border-color:#FFD301;"></span><span data-i18n="theme_high">High</span>
               </button>
             </div>
           </div>
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Motion</h4>
+              <h4 data-i18n="motion">Motion</h4>
               <span class="pref-value" id="lblMotion">Full</span>
             </div>
             <div class="chips" role="radiogroup" aria-label="Motion">
-              <button class="chip" role="radio" aria-checked="true" aria-pressed="true" data-set="motion" data-value="full" data-voice="Full motion">Full</button>
-              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="motion" data-value="reduced" data-voice="Reduced motion">Reduced</button>
-              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="motion" data-value="none" data-voice="No motion">None</button>
+              <button class="chip" role="radio" aria-checked="true" aria-pressed="true" data-set="motion" data-value="full" data-voice="Full motion"><span data-i18n="motion_full">Full</span></button>
+              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="motion" data-value="reduced" data-voice="Reduced motion"><span data-i18n="motion_reduced">Reduced</span></button>
+              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="motion" data-value="none" data-voice="No motion"><span data-i18n="motion_none">None</span></button>
             </div>
           </div>
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Read-aloud</h4>
+              <h4 data-i18n="readaloud">Read-aloud</h4>
               <span class="pref-value">
                 <label class="switch">
                   <input id="setAudio" type="checkbox" checked />
@@ -193,12 +195,12 @@
                 </label>
               </span>
             </div>
-            <p class="text-soft" style="font-size: 0.85rem; margin: 0;">Hear the words while you see them.</p>
+            <p class="text-soft" style="font-size: 0.85rem; margin: 0;" data-i18n="readaloud_desc">Hear the words while you see them.</p>
           </div>
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Voice cues</h4>
+              <h4 data-i18n="voicecues">Voice cues</h4>
               <span class="pref-value">
                 <label class="switch">
                   <input id="setVoice" type="checkbox" />
@@ -207,12 +209,12 @@
                 </label>
               </span>
             </div>
-            <p class="text-soft" style="font-size: 0.85rem; margin: 0;">Speaks button labels when you focus on them. For emerging readers.</p>
+            <p class="text-soft" style="font-size: 0.85rem; margin: 0;" data-i18n="voicecues_desc">Speaks button labels when you focus on them. For emerging readers.</p>
           </div>
 
           <div class="pref-group">
             <div class="pref-label">
-              <h4>Pace</h4>
+              <h4 data-i18n="pace">Pace</h4>
               <span class="pref-value" id="lblPace">0.9×</span>
             </div>
             <input id="setPace" type="range" min="0.5" max="1.5" step="0.1" value="0.9" aria-label="Reading pace" />
@@ -224,13 +226,13 @@
       <!-- Filter panel (Figma "Search Filter" modal, now an inline collapsible) -->
       <details class="filter-panel" id="filterPanel">
         <summary data-voice="Find passages that fit you">
-          <span>Find passages that fit you</span>
+          <span data-i18n="filter_title">Find passages that fit you</span>
           <span class="hint" id="filterHint">Filter by language, learning need, or grade.</span>
           <span class="chev" aria-hidden="true">▾</span>
         </summary>
         <div class="filter-body">
           <div class="filter-group">
-            <h4>Language</h4>
+            <h4 data-i18n="f_language">Language</h4>
             <div class="chips" role="group" aria-label="Language">
               <button type="button" class="chip" data-filter="lang" data-val="english" aria-pressed="true">English</button>
               <button type="button" class="chip" data-filter="lang" data-val="hindi" aria-pressed="false">हिन्दी Hindi</button>
@@ -241,17 +243,17 @@
             </div>
           </div>
           <div class="filter-group">
-            <h4>Learning needs</h4>
+            <h4 data-i18n="f_needs">Learning needs</h4>
             <div class="chips" role="group" aria-label="Learning needs">
-              <button type="button" class="chip" data-filter="need" data-val="dyslexia" aria-pressed="false">Dyslexia</button>
-              <button type="button" class="chip" data-filter="need" data-val="adhd" aria-pressed="false">ADHD</button>
-              <button type="button" class="chip" data-filter="need" data-val="autism" aria-pressed="false">Autism</button>
-              <button type="button" class="chip" data-filter="need" data-val="speech" aria-pressed="false">Speech</button>
-              <button type="button" class="chip" data-filter="need" data-val="visual" aria-pressed="false">Visual / Motor</button>
+              <button type="button" class="chip" data-filter="need" data-val="dyslexia" aria-pressed="false" data-i18n="need_dyslexia">Dyslexia</button>
+              <button type="button" class="chip" data-filter="need" data-val="adhd" aria-pressed="false" data-i18n="need_adhd">ADHD</button>
+              <button type="button" class="chip" data-filter="need" data-val="autism" aria-pressed="false" data-i18n="need_autism">Autism</button>
+              <button type="button" class="chip" data-filter="need" data-val="speech" aria-pressed="false" data-i18n="need_speech">Speech</button>
+              <button type="button" class="chip" data-filter="need" data-val="visual" aria-pressed="false" data-i18n="need_visual">Visual / Motor</button>
             </div>
           </div>
           <div class="filter-group">
-            <h4>Grade level</h4>
+            <h4 data-i18n="f_grade">Grade level</h4>
             <div class="grade-row" role="group" aria-label="Grade level">
               <button type="button" class="grade" data-filter="grade" data-val="1">1</button>
               <button type="button" class="grade" data-filter="grade" data-val="2">2</button>
@@ -267,8 +269,8 @@
           </div>
           <div class="filter-result" id="filterResult">English · Grade 6 · Showing all 8 passages.</div>
           <div class="filter-actions">
-            <button type="button" class="btn ghost" id="filterClear">Clear all</button>
-            <button type="button" class="btn" id="filterApply">Apply filters</button>
+            <button type="button" class="btn ghost" id="filterClear" data-i18n="filter_clear">Clear all</button>
+            <button type="button" class="btn" id="filterApply" data-i18n="filter_apply">Apply filters</button>
           </div>
         </div>
       </details>
@@ -278,17 +280,17 @@
         <div class="cat-tiles">
           <a href="#grid-stories" class="cat-tile" data-voice="Stories category">
             <span class="cat-badge">Category</span>
-            <h3>Stories</h3>
+            <h3 data-i18n="cat_stories">Stories</h3>
             <div class="cat-count" id="cnt-stories">3 passages</div>
           </a>
           <a href="#grid-science" class="cat-tile warm" data-voice="Science category">
             <span class="cat-badge">Category</span>
-            <h3>Science</h3>
+            <h3 data-i18n="cat_science">Science</h3>
             <div class="cat-count" id="cnt-science">3 passages</div>
           </a>
           <a href="#grid-sky" class="cat-tile lav" data-voice="Sky and stars category">
             <span class="cat-badge">Category</span>
-            <h3>Sky &amp; stars</h3>
+            <h3 data-i18n="cat_sky">Sky &amp; stars</h3>
             <div class="cat-count" id="cnt-sky">2 passages</div>
           </a>
         </div>
@@ -302,8 +304,8 @@
               </svg>
             </span>
             <div class="cat-section-text">
-              <h2 id="grid-stories-h">Stories</h2>
-              <p class="cat-tagline">Short tales worth carrying with you.</p>
+              <h2 id="grid-stories-h" data-i18n="cat_stories">Stories</h2>
+              <p class="cat-tagline" data-i18n="tag_stories">Short tales worth carrying with you.</p>
             </div>
             <span class="cat-count-pill" id="cnt-stories-pill">3 passages</span>
           </div>
@@ -319,8 +321,8 @@
               </svg>
             </span>
             <div class="cat-section-text">
-              <h2 id="grid-science-h">Science</h2>
-              <p class="cat-tagline">How the world quietly works.</p>
+              <h2 id="grid-science-h" data-i18n="cat_science">Science</h2>
+              <p class="cat-tagline" data-i18n="tag_science">How the world quietly works.</p>
             </div>
             <span class="cat-count-pill" id="cnt-science-pill">3 passages</span>
           </div>
@@ -335,8 +337,8 @@
               </svg>
             </span>
             <div class="cat-section-text">
-              <h2 id="grid-sky-h">Sky &amp; stars</h2>
-              <p class="cat-tagline">What's overhead, and why.</p>
+              <h2 id="grid-sky-h" data-i18n="cat_sky">Sky &amp; stars</h2>
+              <p class="cat-tagline" data-i18n="tag_sky">What's overhead, and why.</p>
             </div>
             <span class="cat-count-pill" id="cnt-sky-pill">2 passages</span>
           </div>
@@ -354,7 +356,7 @@
   <section class="screen" id="screen-reader" aria-labelledby="reader-title">
     <div class="container">
       <div class="reader">
-        <button class="back" id="backToLib" data-voice="Back to library">← Back to library</button>
+        <button class="back" id="backToLib" data-voice="Back to library" data-i18n="back_to_library">← Back to library</button>
         <p class="reader-eyebrow" id="readerEyebrow"></p>
         <h1 id="reader-title"></h1>
         <div class="reader-meta" id="reader-meta"></div>
@@ -362,19 +364,19 @@
 
         <div class="reader-controls" role="toolbar" aria-label="Reader controls">
           <div class="grp">
-            <button class="icon-btn" id="playBtn" aria-label="Read aloud" data-voice="Read aloud">▶ Read aloud</button>
-            <button class="icon-btn" id="stopBtn" aria-label="Stop reading" data-voice="Stop reading" hidden>■ Stop</button>
+            <button class="icon-btn" id="playBtn" aria-label="Read aloud" data-voice="Read aloud" data-i18n="read_aloud">▶ Read aloud</button>
+            <button class="icon-btn" id="stopBtn" aria-label="Stop reading" data-voice="Stop reading" data-i18n="stop" hidden>■ Stop</button>
           </div>
           <span class="sep" aria-hidden="true"></span>
           <div class="grp">
             <label for="paceLive" class="sr-only">Pace</label>
-            <span class="text-soft" aria-hidden="true" style="font-size: 0.85rem;">Pace</span>
+            <span class="text-soft" aria-hidden="true" style="font-size: 0.85rem;" data-i18n="pace">Pace</span>
             <input id="paceLive" type="range" min="0.5" max="1.5" step="0.1" value="0.9" class="pace-slider" />
             <span class="pace-val" id="paceLiveVal">0.9×</span>
           </div>
           <span class="sep" aria-hidden="true"></span>
           <div class="grp">
-            <a href="#prefsPanel" class="icon-btn" id="openPrefs" data-voice="More preferences">⚙ More preferences</a>
+            <a href="#prefsPanel" class="icon-btn" id="openPrefs" data-voice="More preferences" data-i18n="more_prefs">⚙ More preferences</a>
           </div>
         </div>
 
@@ -383,19 +385,19 @@
         <!-- Reflection panel (replaces the simple finish card) -->
         <div class="reflect">
           <div class="prev-reflection" id="prevReflection" hidden>
-            <span class="lbl">Your last note</span>
+            <span class="lbl" data-i18n="your_last_note">Your last note</span>
             <span id="prevReflectionText"></span>
           </div>
-          <h3>Take a moment.</h3>
+          <h3 data-i18n="reflect_title">Take a moment.</h3>
           <p class="prompt" id="reflectPrompt">What's one thing you'd remember?</p>
-          <textarea id="reflectText" maxlength="280" placeholder="Type a sentence or two. Or leave it empty. Both are fine."></textarea>
+          <textarea id="reflectText" maxlength="280" placeholder="Type a sentence or two. Or leave it empty. Both are fine." data-i18n-ph="reflect_ph"></textarea>
           <div class="reflect-meta">
             <span id="reflectCount">0 / 280</span>
-            <span>Saved to this device only.</span>
+            <span data-i18n="reflect_saved">Saved to this device only.</span>
           </div>
           <div class="reflect-actions">
-            <button class="btn" id="markRead" data-voice="Mark as read">I read this</button>
-            <span class="skip-note">You can leave the note empty — it's not a test.</span>
+            <button class="btn" id="markRead" data-voice="Mark as read" data-i18n="i_read_this">I read this</button>
+            <span class="skip-note" data-i18n="skip_note">You can leave the note empty — it's not a test.</span>
           </div>
         </div>
       </div>
@@ -410,12 +412,12 @@
       <div class="complete">
         <div class="complete-card">
           <div class="complete-icon" aria-hidden="true">✓</div>
-          <h1 id="complete-title">Nice. You read <span id="completeTitle">that</span>.</h1>
-          <p class="complete-sub" id="completeSub">Take a breath. There's no rush on what's next.</p>
-          <p class="saved-line" id="completeSaved" hidden>Your note has been saved to this device.</p>
+          <h1 id="complete-title">Nice. You read that.</h1>
+          <p class="complete-sub" id="completeSub" data-i18n="complete_sub">Take a breath. There's no rush on what's next.</p>
+          <p class="saved-line" id="completeSaved" data-i18n="complete_saved" hidden>Your note has been saved to this device.</p>
 
           <div class="next-suggest" id="nextSuggest">
-            <h4>Try this next?</h4>
+            <h4 data-i18n="try_next">Try this next?</h4>
             <button type="button" class="next-card" id="nextCard">
               <div class="meta" id="nextMeta"></div>
               <h3 id="nextTitle"></h3>
@@ -424,11 +426,11 @@
           </div>
 
           <div class="all-done" id="allDone" hidden>
-            🌱 You've read every passage in the library. Come back any time — re-reading counts.
+            <span data-i18n="all_done">🌱 You've read every passage in the library. Come back any time — re-reading counts.</span>
           </div>
 
           <div class="complete-actions">
-            <button class="btn ghost" id="completeBack" data-voice="Back to library">Back to library</button>
+            <button class="btn ghost" id="completeBack" data-voice="Back to library" data-i18n="back_to_library2">Back to library</button>
           </div>
         </div>
       </div>
@@ -441,134 +443,66 @@
 <div class="toast" id="toast" role="status" aria-live="polite">
   <div class="icon" id="toastIcon" aria-hidden="true">⭐</div>
   <div>
-    <div class="lbl">Milestone</div>
+    <div class="lbl" data-i18n="milestone_label">Milestone</div>
     <div class="title" id="toastTitle"></div>
   </div>
 </div>
 
 <!-- Voice cue indicator -->
-<div class="voice-indicator" id="voiceIndicator" aria-hidden="true">🔊 Voice cues on</div>
+<div class="voice-indicator" id="voiceIndicator" aria-hidden="true" data-i18n="voice_on">🔊 Voice cues on</div>
 
 <footer class="site-footer">
   <div class="container">
-    <div>Saksham — capable learning, your way.</div>
+    <div data-i18n="footer_tagline">Saksham — capable learning, your way.</div>
     <div class="footer-links">
-      <a href="achievements.html">Achievements</a>
-      <a href="educators.html">For educators</a>
-      <a href="about.html">About</a>
-      <a href="https://github.com/jsayed23/miniproject2" target="_blank" rel="noopener">Source</a>
+      <a href="achievements.html" data-i18n="nav_achievements">Achievements</a>
+      <a href="educators.html" data-i18n="nav_educators">For educators</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="https://github.com/jsayed23/miniproject2" target="_blank" rel="noopener" data-i18n="footer_source">Source</a>
     </div>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
 /* =========================================================================
-   DATA — passages + achievements
+   DATA — achievements (passages come from i18n.js)
    ========================================================================= */
-const PASSAGES = [
-  { id: "banyan", cat: "stories", title: "The Banyan Tree", minutes: 3, level: "Easy",
-    paragraphs: [
-      "In many Indian villages, the biggest tree in the middle of the square is a banyan. A banyan does not grow tall like other trees. Instead, it grows wide. Its branches reach out, and from those branches, long roots drop down like ropes.",
-      "When the roots touch the ground, they grow into the soil and become new trunks. After many years, one banyan tree can look like a small forest. Some banyans in India are more than two thousand years old. People sit under them to rest, talk, and study.",
-      "Scientists call the banyan a fig tree. Its fruit is small and round, and birds love it. When a bird eats a fig and lands on another tree, the seed can sprout right on that tree's branch. That is how new banyans begin life high in the air, before sending roots down to the ground."
-    ],
-    vocab: [
-      { word: "trunk", def: "The main stem of a tree, the thick part that holds up the branches." },
-      { word: "sprout", def: "To start to grow. A seed sprouts when its first little stem pushes out." }
-    ],
-    prompt: "Is there a tree near where you live that feels important to your neighborhood?"
-  },
-  { id: "rani", cat: "stories", title: "Rani's Rainy Day", minutes: 4, level: "Easy",
-    paragraphs: [
-      "Rani stood at the door of her flat in Mumbai and watched the rain. It had been raining for three days. The road was a long brown river now. Cars moved slowly through it, and people waded with their slippers in their hands.",
-      "Her grandmother handed her a cup of warm chai. \"In the monsoon,\" her grandmother said, \"everything slows down. That is the gift of it. The city has to learn patience.\"",
-      "Rani thought about her week. School was canceled. Her friends were stuck at home, too. Usually she felt rushed. Today, there was nothing to rush toward. She drank her chai slowly and watched a frog sit very still on the windowsill, waiting out the rain.",
-      "When the rain finally stopped, the air smelled clean. Children came out and splashed in the puddles. Rani went to join them. The road was still a mess, but no one minded."
-    ],
-    vocab: [
-      { word: "monsoon", def: "The rainy season in South Asia, when it rains heavily for weeks at a time." },
-      { word: "patience", def: "The ability to wait calmly without getting upset." }
-    ],
-    prompt: "When does your world slow down? What does that feel like?"
-  },
-  { id: "lamp", cat: "stories", title: "The Lamp Lighter", minutes: 4, level: "Medium",
-    paragraphs: [
-      "Before electric lights came to her village, Tara's grandfather was the lamp lighter. Every evening just before sunset, he walked the same route with a long pole, lighting each oil lamp on its tall wooden post. The pole had a small flame at the end. He would touch the flame to the wick, watch it catch, and move on to the next post.",
-      "Tara remembers waiting at the corner of her street when she was small. She wanted to see her grandfather come around the bend. He always carried a small notebook, where he wrote down which lamps needed new wicks or more kerosene. He was very patient with the work. He said each lamp had its own personality. Some caught quickly. Some needed a moment to think about it.",
-      "When the electric lines were finally laid in the village, the kerosene lamps were taken down one by one. Her grandfather was not sad. He said it was good that families could now see each other clearly at dinner. But he kept one of the old lamps in the kitchen. On nights when the power went out, which still happened often, he would light it with a match. The kitchen would fill with a soft yellow glow.",
-      "Tara lives in the city now. When the lights go out in her apartment building, which doesn't happen often, she lights a candle. The room becomes a small room again, the way her grandfather's kitchen used to be."
-    ],
-    vocab: [
-      { word: "wick", def: "The string or strip of cloth in a candle or lamp that soaks up oil and burns." },
-      { word: "kerosene", def: "A kind of oil that was once used in lamps and is still used in some stoves." }
-    ],
-    prompt: "What's something old that still has a quiet job in your home?"
-  },
-  { id: "honey", cat: "science", title: "How Honey Gets to Your Table", minutes: 4, level: "Medium",
-    paragraphs: [
-      "A jar of honey looks simple, but it took thousands of bees to fill it. A single honeybee visits about fifty flowers in one trip. To make one teaspoon of honey, bees from a whole hive must visit more than ten thousand flowers together.",
-      "When a bee finds a good patch of flowers, she flies back to the hive and dances. The dance is shaped like a figure eight. The angle of the dance tells the other bees which direction to fly. The length of the dance tells them how far. This is one of the few times in nature that an animal tells another animal directions with a map.",
-      "Bees carry nectar in a special stomach. Back at the hive, they pass the nectar from bee to bee, breathing on it to make it dry. Then they store it in the honeycomb and seal it with wax. The honey is finished. It can stay good for thousands of years, which is why archaeologists have found honey in old jars and it was still safe to eat."
-    ],
-    vocab: [
-      { word: "nectar", def: "A sweet liquid that flowers make. Bees drink it and turn it into honey." },
-      { word: "honeycomb", def: "The wax structure bees build, made of small six-sided rooms for honey." }
-    ],
-    prompt: "If you could send a 'dance message' to a friend, what would it say?"
-  },
-  { id: "birds", cat: "science", title: "Why Birds Sing in the Morning", minutes: 4, level: "Medium",
-    paragraphs: [
-      "If you wake up early enough, before the cars and the people and the traffic, you can hear it. Birds singing all at once. It is called the dawn chorus, and it happens almost everywhere there are birds, every morning, just before sunrise.",
-      "Scientists have wondered for a long time why birds sing more at dawn than at any other time of day. There are a few good guesses. The air just before sunrise is still and cool, and sound travels far in still cool air. A song sung at dawn can reach almost twenty times more birds than the same song at noon. So the dawn is the moment when one bird can be heard by the most other birds at once.",
-      "There is also another reason. Many male birds sing to defend their territory. Singing tells other birds, this is my patch of forest. Singing at dawn is a way of saying it before anyone else has the chance.",
-      "Different birds sing in a rough order. Robins and thrushes start first. Sparrows and tits join in. Crows are usually the last. If you listen carefully one morning, you can hear the layers add themselves one by one, like instruments coming into a song."
-    ],
-    vocab: [
-      { word: "dawn", def: "The time just before and during sunrise, when the sky first gets light." },
-      { word: "territory", def: "An area that an animal considers its own and will defend from others." }
-    ],
-    prompt: "What's the earliest sound you remember hearing in the morning?"
-  },
-  { id: "music", cat: "science", title: "The Math Hiding in Music", minutes: 4, level: "Medium",
-    paragraphs: [
-      "Music feels like feeling. But under that feeling, there is math. Every note has a number, and every rhythm is a fraction.",
-      "When a drummer plays four steady beats, that is a count of four. If she splits one of those beats in half, she is playing eighths. Splitting again gives sixteenths. The faster the drum, the smaller the fractions. Drummers do not usually think in fractions, but their hands have learned them.",
-      "Indian classical music uses cycles called taal. A taal of sixteen beats is called teentaal. It is the same length as four bars of four in Western music, but it is felt differently. A tabla player can clap the sixteen beats and find the same pattern over and over, even when the melody floats freely on top.",
-      "Once you notice this, math stops feeling like a school subject. It is just the shape under the song."
-    ],
-    vocab: [
-      { word: "rhythm", def: "The pattern of beats in music — short, long, fast, slow." },
-      { word: "taal", def: "A rhythm cycle in Indian classical music. Teentaal has sixteen beats." }
-    ],
-    prompt: "What's a pattern in your day you've noticed but never named?"
-  },
-  { id: "stars", cat: "sky", title: "Stars That Tell Stories", minutes: 3, level: "Easy",
-    paragraphs: [
-      "On a clear night far from city lights, you can see thousands of stars. People all over the world have looked up at those same stars for thousands of years. To remember the patterns, they made up stories.",
-      "In Indian astronomy, the sky is divided into twenty-seven groups of stars called nakshatras. Each one has a name and a story. The nakshatra called Rohini is shaped like a cart. The one called Mrigashira looks like the head of a deer.",
-      "Other cultures see the same stars differently. The shape we call the Big Dipper is called the Plough in Britain and Saptarishi, the Seven Sages, in India. The stars are not really arranged that way in space. They only look like a shape from where we stand on Earth.",
-      "Looking at stars is one of the oldest things a human can do. The light you see has been traveling for many years. When it finally lands in your eye, you and that ancient light are meeting for the first time."
-    ],
-    vocab: [
-      { word: "nakshatra", def: "One of the twenty-seven groups of stars in Indian astronomy, each with its own name and story." },
-      { word: "constellation", def: "A group of stars that, from Earth, looks like a shape or figure." }
-    ],
-    prompt: "If you made up a name for a constellation, what shape would it be?"
-  },
-  { id: "moon", cat: "sky", title: "The Moon's Quiet Side", minutes: 3, level: "Medium",
-    paragraphs: [
-      "The moon always shows us the same face. The same dark patches, the same mountains, the same craters. This is not a coincidence. The moon turns once on its axis in exactly the time it takes to orbit Earth, so the same side faces us every night.",
-      "For most of human history, no one had any idea what the other side of the moon looked like. It was a great unknown. In 1959, a Soviet spacecraft called Luna 3 flew past the moon's far side and took the first photographs. The pictures came back grainy and dark, but they were the first time human eyes had ever seen what was over there.",
-      "The far side, it turned out, looks very different. The near side that faces Earth is covered in large dark plains called maria, ancient seas of cooled lava. The far side has almost none of those. It is mostly bright mountains and craters, smaller and more rugged. Scientists are still figuring out why the two sides ended up so different.",
-      "The far side is sometimes called the dark side, but that is not quite right. It gets just as much sunlight as the near side. It is just the side that is always turned away from us — a side that has its own quiet life, in plain view of the sun, hidden only from the world it has always quietly circled."
-    ],
-    vocab: [
-      { word: "orbit", def: "The curved path one object takes around another in space, like the moon around Earth." },
-      { word: "maria", def: "The dark, flat areas on the moon. 'Maria' is Latin for 'seas,' though they have no water." }
-    ],
-    prompt: "What's something close to you that you've never really looked at?"
-  }
-];
+const PASSAGES = window.SAKSHAM_PASSAGES;
+
+const AVATAR_EMOJI = { blue: '🦊', green: '🐢', warm: '🦋', sun: '🐝', lav: '🦉', rose: '🐼' };
+
+/* ---- i18n helpers ----
+   curLang(): current UI language code. t(): interface string lookup with {var}
+   substitution. L(): the current-language block of a passage (falls back to en).
+   speechTagFor(): BCP-47 tag for the Web Speech API. */
+function curLang() { try { return (state && state.lang) || 'en'; } catch (e) { return 'en'; } }
+function t(key, vars) {
+  const lang = curLang();
+  const table = window.SAKSHAM_STRINGS[lang] || window.SAKSHAM_STRINGS.en;
+  let s = (table[key] != null) ? table[key] : (window.SAKSHAM_STRINGS.en[key] != null ? window.SAKSHAM_STRINGS.en[key] : key);
+  if (vars) Object.keys(vars).forEach(k => { s = String(s).split('{' + k + '}').join(vars[k]); });
+  return s;
+}
+function L(p) { const lang = curLang(); return (p && (p[lang] || p.en)) || {}; }
+function speechTagFor(lang) { const m = window.SAKSHAM_LANGS.find(x => x.key === lang); return m ? m.speech : 'en-US'; }
+
+/* Re-localise every static string, then refresh the dynamic UI. Called on load
+   and whenever the reader switches language. */
+function localizeStaticUI() {
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.getAttribute('data-i18n')); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
+}
+function applyLang() {
+  document.documentElement.lang = curLang();
+  localizeStaticUI();
+  if (typeof syncPrefsUI === 'function') syncPrefsUI();
+  if (typeof syncFilterUI === 'function') syncFilterUI();
+  const home = document.getElementById('screen-home');
+  if (home && home.classList.contains('active')) { renderHello(); renderLibrary(); }
+  const reader = document.getElementById('screen-reader');
+  if (reader && reader.classList.contains('active') && currentPassage) openPassage(currentPassage.id);
+}
 
 const ACHIEVEMENTS = [
   { id: 'first-read',     icon: '📖', title: 'First passage',     desc: 'You read your first passage. Welcome to the library.' },
@@ -607,6 +541,7 @@ const AVATAR_LABELS = { blue: "Blue", green: "Green", warm: "Orange", sun: "Yell
    ========================================================================= */
 const DEFAULTS = {
   font: "atkinson", size: "m", contrast: "cream", motion: "full",
+  lang: "en",
   audio: true, voiceCues: false, pace: 0.9,
   profile: null,                  // { name, avatar }
   read: {},                       // { passageId: ISO date }
@@ -697,12 +632,12 @@ function updateContinueButton() {
   const btn = document.getElementById('continueBtn');
   const next = getNextUnread();
   if (next) {
-    btn.innerHTML = `Read "${next.title}" →`;
-    btn.setAttribute('data-voice', `Read ${next.title}`);
+    btn.innerHTML = t('read_titled', { t: L(next).title });
+    btn.setAttribute('data-voice', L(next).title);
     btn.onclick = () => openPassage(next.id);
   } else {
-    btn.innerHTML = `Browse the library →`;
-    btn.setAttribute('data-voice', 'Browse the library');
+    btn.innerHTML = t('browse_library');
+    btn.setAttribute('data-voice', t('browse_library'));
     btn.onclick = () => {
       document.getElementById('library').scrollIntoView({
         behavior: state.motion === 'none' ? 'auto' : 'smooth',
@@ -756,7 +691,7 @@ function renderHello() {
   const avEl = document.getElementById('helloAvatar');
   if (avEl) {
     avEl.className = 'avatar av-' + p.avatar;
-    avEl.textContent = (p.name || 'R').slice(0,1).toUpperCase();
+    avEl.textContent = AVATAR_EMOJI[p.avatar] || '🦊';
   }
   document.getElementById('helloName').textContent = p.name + '.';
 
@@ -764,20 +699,18 @@ function renderHello() {
   const readCount = Object.keys(state.read).length;
   let eyebrow, sub;
   if (readCount === 0) {
-    eyebrow = "Welcome";
-    sub = "Pick something to read at your own pace. Words with a dotted underline have definitions you can tap. Your settings travel with you across every page.";
+    eyebrow = t('g_welcome'); sub = t('hero_sub_new');
   } else if (readCount < PASSAGES.length) {
-    eyebrow = hour < 5 ? 'Up late' : hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : hour < 21 ? 'Good evening' : 'Welcome back';
-    sub = "Pick up where you left off, or try something new. Nothing here is timed.";
+    eyebrow = hour < 5 ? t('g_late') : hour < 12 ? t('g_morning') : hour < 17 ? t('g_afternoon') : hour < 21 ? t('g_evening') : t('g_welcome_back');
+    sub = t('hero_sub_mid');
   } else {
-    eyebrow = "Done — and welcome back";
-    sub = "You've read everything. Re-reading counts. Or come back tomorrow.";
+    eyebrow = t('g_done'); sub = t('hero_sub_done');
   }
   document.getElementById('helloGreeting').textContent = eyebrow;
   document.getElementById('helloLine').textContent = sub;
 
-  document.getElementById('snapRead').textContent = readCount;
-  document.getElementById('snapTotal').textContent = PASSAGES.length;
+  const rcl = document.getElementById('readCountLabel');
+  if (rcl) rcl.textContent = t('read_count', { n: readCount, t: PASSAGES.length });
   const pct = Math.round((readCount / PASSAGES.length) * 100);
   document.getElementById('progressFill').style.width = pct + '%';
 
@@ -810,9 +743,9 @@ function syncPrefsUI() {
   document.getElementById('setPace').value = state.pace;
   document.getElementById('paceLive').value = state.pace;
   document.getElementById('lblFont').textContent = FONT_LABELS[state.font];
-  document.getElementById('lblSize').textContent = SIZE_LABELS[state.size];
-  document.getElementById('lblContrast').textContent = CONTRAST_LABELS[state.contrast];
-  document.getElementById('lblMotion').textContent = MOTION_LABELS[state.motion];
+  document.getElementById('lblSize').textContent = t('size_' + state.size);
+  document.getElementById('lblContrast').textContent = t('theme_' + state.contrast);
+  document.getElementById('lblMotion').textContent = t('motion_' + state.motion);
   document.getElementById('lblPace').textContent = state.pace.toFixed(1) + '×';
   document.getElementById('paceLiveVal').textContent = state.pace.toFixed(1) + '×';
   document.getElementById('playBtn').hidden = !state.audio;
@@ -854,45 +787,63 @@ document.getElementById('openPrefs').addEventListener('click', (e) => {
 /* =========================================================================
    LIBRARY
    ========================================================================= */
+/* True when a passage matches the active grade and learning-need filters.
+   Language is not a filter here — it switches content, not the visible set. */
+function passesFilters(p) {
+  const grades = [...filterState.grade];
+  if (grades.length && !grades.some(g => p.gmin <= +g && +g <= p.gmax)) return false;
+  if (filterState.need.size && ![...filterState.need].some(n => p.needs.includes(n))) return false;
+  return true;
+}
 function renderLibrary() {
   const byCat = {};
-  PASSAGES.forEach(p => {
-    if (!byCat[p.cat]) byCat[p.cat] = [];
-    byCat[p.cat].push(p);
-  });
+  PASSAGES.forEach(p => { (byCat[p.cat] = byCat[p.cat] || []).push(p); });
+  let totalVisible = 0;
   Object.keys(byCat).forEach(cat => {
     const grid = document.getElementById('grid-' + cat);
     const count = document.getElementById('cnt-' + cat);
     const countPill = document.getElementById('cnt-' + cat + '-pill');
     if (!grid) return;
     grid.innerHTML = '';
-    const label = `${byCat[cat].length} passage${byCat[cat].length === 1 ? '' : 's'}`;
+    const visible = byCat[cat].filter(passesFilters);
+    totalVisible += visible.length;
+    const label = visible.length === 1 ? t('one_passage') : t('n_passages', { n: visible.length });
     if (count) count.textContent = label;
     if (countPill) countPill.textContent = label;
-    byCat[cat].forEach(p => {
+    const section = grid.closest('.cat-section');
+    if (section) section.style.display = visible.length ? '' : 'none';
+    visible.forEach(p => {
+      const lp = L(p);
       const done = !!state.read[p.id];
       const card = document.createElement('button');
       card.className = 'passage-card p-' + p.cat;
       card.setAttribute('role', 'listitem');
-      card.setAttribute('data-voice', `${p.title}, ${p.minutes} minutes, ${p.level}`);
+      card.setAttribute('data-voice', lp.title);
       const icon = PASSAGE_ICONS[p.id] || '';
       card.innerHTML = `
         <div class="meta">
-          <span>${p.minutes} min</span>
+          <span>${t('min_label', { n: p.minutes })}</span>
           <span class="dot">·</span>
-          <span>${p.level}</span>
+          <span>${t('level_' + p.level)}</span>
         </div>
         <div class="p-title-row">
           ${icon ? `<span class="p-icon" aria-hidden="true">${icon}</span>` : ''}
-          <h3>${p.title}</h3>
+          <h3>${lp.title}</h3>
         </div>
-        <p class="preview">${p.paragraphs[0].slice(0, 110)}…</p>
-        ${done ? '<div class="done">✓ You read this</div>' : ''}
+        <p class="preview">${(lp.paragraphs[0] || '').slice(0, 110)}…</p>
+        ${done ? `<div class="done">${t('read_done')}</div>` : ''}
       `;
       card.addEventListener('click', () => openPassage(p.id));
       grid.appendChild(card);
     });
   });
+  const lib = document.getElementById('library');
+  let emptyEl = document.getElementById('libEmpty');
+  if (totalVisible === 0) {
+    if (!emptyEl) { emptyEl = document.createElement('p'); emptyEl.id = 'libEmpty'; emptyEl.className = 'lib-empty'; lib.appendChild(emptyEl); }
+    emptyEl.textContent = t('empty_shelf');
+    emptyEl.style.display = '';
+  } else if (emptyEl) { emptyEl.style.display = 'none'; }
 }
 
 /* =========================================================================
@@ -918,34 +869,35 @@ function openPassage(id) {
   const p = PASSAGES.find(x => x.id === id);
   if (!p) return;
   currentPassage = p;
-  document.getElementById('readerEyebrow').textContent = CATEGORY_LABELS[p.cat].toUpperCase();
-  document.getElementById('reader-title').textContent = p.title;
+  const lp = L(p);
+  document.getElementById('readerEyebrow').textContent = t('cat_' + p.cat).toUpperCase();
+  document.getElementById('reader-title').textContent = lp.title;
   document.getElementById('reader-meta').innerHTML = `
-    <span>${CATEGORY_LABELS[p.cat]}</span>
+    <span>${t('cat_' + p.cat)}</span>
     <span class="text-soft">·</span>
-    <span>${p.minutes} min</span>
+    <span>${t('min_label', { n: p.minutes })}</span>
     <span class="text-soft">·</span>
-    <span>${p.level}</span>
+    <span>${t('level_' + p.level)}</span>
   `;
 
   // Paragraph progress indicator
   const paraEl = document.getElementById('paraProgress');
-  paraEl.innerHTML = `<span>${p.paragraphs.length} paragraphs</span><span class="dots">${
-    p.paragraphs.map((_, i) => `<span class="dot" data-para="${i}"></span>`).join('')
+  paraEl.innerHTML = `<span>${t('n_paragraphs', { n: lp.paragraphs.length })}</span><span class="dots">${
+    lp.paragraphs.map((_, i) => `<span class="dot" data-para="${i}"></span>`).join('')
   }</span>`;
   // Mark dots as the user scrolls through paragraphs
   const paraDots = paraEl.querySelectorAll('.dot');
 
   // Build vocab lookup: lowercase whole word → definition
   const vocabMap = {};
-  (p.vocab || []).forEach(v => { vocabMap[v.word.toLowerCase()] = v.def; });
+  (lp.vocab || []).forEach(v => { vocabMap[v.word.toLowerCase()] = v.def; });
 
   const body = document.getElementById('passageBody');
   body.innerHTML = '';
   wordEls = [];
   const paraEls = [];
 
-  p.paragraphs.forEach((para, paraIdx) => {
+  lp.paragraphs.forEach((para, paraIdx) => {
     const pEl = document.createElement('p');
     pEl.dataset.para = paraIdx;
     const tokens = para.split(/(\s+)/);
@@ -1017,7 +969,7 @@ function openPassage(id) {
   const reflectText = document.getElementById('reflectText');
   reflectText.value = savedNote;
   document.getElementById('reflectCount').textContent = `${savedNote.length} / 280`;
-  document.getElementById('reflectPrompt').textContent = p.prompt || "What's one thing you'd remember?";
+  document.getElementById('reflectPrompt').textContent = lp.prompt || '';
   // Show previous reflection inline (if any)
   const prevWrap = document.getElementById('prevReflection');
   if (savedNote) {
@@ -1092,7 +1044,7 @@ document.getElementById('markRead').addEventListener('click', () => {
  * @returns {void} - Updates the completion-screen DOM and transitions to it.
  */
 function showCompletion(passage) {
-  document.getElementById('completeTitle').textContent = `"${passage.title}"`;
+  document.getElementById('complete-title').textContent = t('complete_title', { t: '“' + L(passage).title + '”' });
   // Surface the reflection-saved line if there was a note
   const saved = (state.reflections[passage.id] || '').trim();
   document.getElementById('completeSaved').hidden = saved.length === 0;
@@ -1110,11 +1062,11 @@ function showCompletion(passage) {
   if (next) {
     nextSuggest.hidden = false;
     allDone.hidden = true;
-    document.getElementById('nextMeta').innerHTML = `${CATEGORY_LABELS[next.cat]} · ${next.minutes} min · ${next.level}`;
-    document.getElementById('nextTitle').textContent = next.title;
-    document.getElementById('nextPreview').textContent = next.paragraphs[0].slice(0, 110) + '…';
+    document.getElementById('nextMeta').innerHTML = t('cat_' + next.cat) + ' · ' + t('min_label', { n: next.minutes }) + ' · ' + t('level_' + next.level);
+    document.getElementById('nextTitle').textContent = L(next).title;
+    document.getElementById('nextPreview').textContent = L(next).paragraphs[0].slice(0, 110) + '…';
     document.getElementById('nextCard').onclick = () => openPassage(next.id);
-    document.getElementById('nextCard').setAttribute('data-voice', `Open ${next.title}`);
+    document.getElementById('nextCard').setAttribute('data-voice', L(next).title);
   } else {
     nextSuggest.hidden = true;
     allDone.hidden = false;
@@ -1130,7 +1082,7 @@ document.getElementById('paceLive').addEventListener('input', (e) => {
   if (speaking) restartSpeech();
 });
 
-function getFullText() { return currentPassage ? currentPassage.paragraphs.join('\n\n') : ''; }
+function getFullText() { return currentPassage ? L(currentPassage).paragraphs.join('\n\n') : ''; }
 function clearSpoken() { wordEls.forEach(w => w.classList.remove('spoken')); }
 
 /**
@@ -1155,7 +1107,13 @@ function speak() {
   utter = new SpeechSynthesisUtterance(text);
   utter.rate = state.pace;
   utter.pitch = 1;
-  utter.lang = 'en-US';
+  utter.lang = speechTagFor(state.lang);
+  try {
+    const voices = speechSynthesis.getVoices() || [];
+    const want = utter.lang.slice(0, 2).toLowerCase();
+    const v = voices.find(vo => (vo.lang || '').toLowerCase().startsWith(want));
+    if (v) utter.voice = v;
+  } catch (e) {}
 
   const offsets = [];
   const regex = /\S+/g;
@@ -1325,44 +1283,52 @@ const NEED_SUGGESTIONS = {
 function syncFilterUI() {
   document.querySelectorAll('[data-filter]').forEach(btn => {
     const f = btn.dataset.filter, v = btn.dataset.val;
-    const active = filterState[f].has(v);
+    let active;
+    if (f === 'lang') { const m = window.SAKSHAM_LANGS.find(x => x.code === v); active = !!m && m.key === state.lang; }
+    else active = filterState[f].has(v);
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
-  // Result line
-  const langs = [...filterState.lang].map(v => LANG_LABELS[v]).join(', ') || 'Any language';
-  const grades = [...filterState.grade].sort().join(', ');
+  const langMeta = window.SAKSHAM_LANGS.find(x => x.key === state.lang) || window.SAKSHAM_LANGS[0];
+  const grades = [...filterState.grade].sort((a, b) => a - b).join(', ');
+  const visible = PASSAGES.filter(passesFilters).length;
+  let line = t('filter_result', { lang: langMeta.native, g: grades || '—', n: visible, total: PASSAGES.length });
   const needs = [...filterState.need];
-
-  let line = `${langs} · Grade ${grades || '—'} · Showing all ${PASSAGES.length} passages.`;
-  if (filterState.lang.size && !filterState.lang.has('english')) {
-    line += ' Other languages are coming soon — the current library is English.';
-  }
-  if (needs.length) {
-    line += ' Suggestions for your filters: ' + needs.map(n => NEED_SUGGESTIONS[n]).join(' ');
-  }
+  if (needs.length) line += ' ' + t('sug_prefix') + needs.map(n => t('sug_' + n)).join(' ');
   document.getElementById('filterResult').textContent = line;
-  // hint in summary
   const hint = document.getElementById('filterHint');
-  const total = filterState.lang.size + filterState.need.size + filterState.grade.size;
-  hint.textContent = total > 1 ? `${total} filters active.` : 'Filter by language, learning need, or grade.';
+  const total = filterState.need.size + filterState.grade.size;
+  hint.textContent = total > 1 ? t('filters_active', { n: total }) : t('filter_hint');
 }
 
 document.querySelectorAll('[data-filter]').forEach(btn => {
   btn.addEventListener('click', () => {
     const f = btn.dataset.filter, v = btn.dataset.val;
-    if (filterState[f].has(v)) filterState[f].delete(v);
-    else filterState[f].add(v);
+    if (f === 'lang') {
+      // Language is single-select and switches the whole app immediately.
+      const meta = window.SAKSHAM_LANGS.find(x => x.code === v);
+      if (meta) {
+        state.lang = meta.key;
+        filterState.lang = new Set([v]);
+        saveState();
+        applyLang();
+      }
+      return;
+    }
+    if (f === 'grade') { filterState.grade = new Set([v]); }   // grade is single-select
+    else { if (filterState[f].has(v)) filterState[f].delete(v); else filterState[f].add(v); }
     syncFilterUI();
+    renderLibrary();
   });
 });
 document.getElementById('filterClear').addEventListener('click', () => {
-  filterState.lang = new Set(['english']);
   filterState.need = new Set();
   filterState.grade = new Set(['6']);
   syncFilterUI();
+  renderLibrary();
 });
 document.getElementById('filterApply').addEventListener('click', () => {
   document.getElementById('filterPanel').open = false;
+  renderLibrary();
   document.getElementById('library').scrollIntoView({ behavior: state.motion === 'none' ? 'auto' : 'smooth' });
 });
 
@@ -1372,6 +1338,18 @@ syncFilterUI();
    INIT
    ========================================================================= */
 syncPrefsUI();
+
+// Initialise language selection from saved state, then localise the whole UI.
+(function initLang() {
+  const meta = window.SAKSHAM_LANGS.find(x => x.key === state.lang) || window.SAKSHAM_LANGS[0];
+  filterState.lang = new Set([meta.code]);
+})();
+applyLang();
+
+// Some browsers load speech voices asynchronously; re-evaluate when they arrive.
+if ('speechSynthesis' in window) {
+  speechSynthesis.onvoiceschanged = () => {};
+}
 
 // Route to setup if no profile yet, otherwise home
 if (!state.profile || !state.profile.name) {
