@@ -2,10 +2,10 @@
 
 **An accessible reading library for neurodivergent learners.** *Saksham* means *capable* in Hindi. Set the font, contrast, pace, motion, and audio to whatever your brain wants. Pick a passage. Read at your own speed in **any of six languages — English, Hindi, Bengali, Marathi, Gujarati, or Telugu**. No accounts, no streaks, no comparisons. Everything stays in your browser.
 
-This is the working web implementation of the Saksham design originally published in the [Cal Poly TAGA 2026 Journal](https://issuu.com/calpolytaga/docs/cal_poly_taga_2026/132). The visual language mirrors the original [Figma prototype](https://www.figma.com/proto/vOScugmTaA0yo2M25I105V/Saksham-App-Design-File) — onboarding, category cards, soft brand palette — adapted from mobile screens to a responsive multi-page website.
+This is the working web implementation of the Saksham design originally published in the [Technical Association of the Graphic Arts (TAGA) 2026 Journal](https://issuu.com/calpolytaga/docs/cal_poly_taga_2026/132). The visual language mirrors the original [Figma prototype](https://www.figma.com/proto/vOScugmTaA0yo2M25I105V/Saksham-App-Design-File) — onboarding, category cards, soft brand palette — adapted from mobile screens to a responsive multi-page website.
 
-**Live site:** https://jsayed23.github.io/miniproject2/
-**Repo:** https://github.com/jsayed23/miniproject2
+**Live site:** https://jsayed23.github.io/saksham-reading-library/
+**Repo:** https://github.com/jsayed23/saksham-reading-library
 
 ## What it is
 
@@ -18,7 +18,7 @@ A four-page static website built around a working reading tool:
 | `educators.html` | Teacher-dashboard demo (mock Grade 6 Section B roster showing six students with varied settings) plus a practical classroom guide and privacy note. |
 | `about.html` | Brief account of the research lineage and how the build is constructed. |
 
-Plus `styles.css` (shared design system), `mp2.md` (HCDE 530 competency claim), and `reflection.md` (the Canvas reflection).
+Plus `styles.css` (shared design system), `mp2.md` (technical notes), and `reflection.md` (project reflection).
 
 ## The reading flow
 
@@ -89,7 +89,7 @@ This is a **design-track project: the interface is the intervention.** Accessibi
 ## File layout
 
 ```
-miniproject2/
+saksham-reading-library/
 ├── index.html          Library + reader + setup + completion (the actual tool)
 ├── achievements.html   Self-paced milestone grid
 ├── educators.html      Teacher dashboard + classroom guide
@@ -97,8 +97,8 @@ miniproject2/
 ├── styles.css          Shared design system
 ├── i18n.js             Six-language interface strings + translated passages
 ├── README.md           This file
-├── mp2.md              HCDE 530 competency claim
-└── reflection.md       500-word Canvas reflection
+├── mp2.md              Technical notes
+└── reflection.md       Project reflection
 ```
 
 ## Accessibility, concretely
@@ -123,7 +123,7 @@ Notable computational pieces:
 
 ## How it was built
 
-The MP2a declaration named Lovable as the platform. The actual build was done as a hand-written multi-page site in HTML/CSS/JavaScript, drafted and iterated with **Claude** (Anthropic's AI assistant) as the pair-programmer.
+Built as a hand-written multi-page site in HTML, CSS, and JavaScript, with all design and engineering decisions made directly.
 
 **The platform choice was driven by what the audience needs, not by tool preference.** The features that make Saksham serve a neurodivergent reader specifically — not just describe one — depend on browser APIs that no Python framework can reach:
 
@@ -139,11 +139,11 @@ The design itself went through several visible iterations during the build, each
 
 ## Context
 
-Saksham started as a 2024–2025 solo research and design project at Cal Poly, published in the Cal Poly TAGA 2026 Journal. The browser build is the implementation, made for HCDE 530 (Computational Methods in Human Centered Design and Engineering) at the University of Washington, Spring 2026.
+Saksham started as a 2024–2025 solo research and design project, published in the Technical Association of the Graphic Arts (TAGA) 2026 Journal. The browser build is the working implementation.
 
 ## License
 
-Class project. Feel free to fork. A credit back to the original Saksham research is appreciated.
+Feel free to fork. A credit back to the original Saksham research is appreciated.
 
 ## Author
 
