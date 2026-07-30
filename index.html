@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body data-contrast="cream" data-font="atkinson" data-size="m" data-motion="full">
+<body data-contrast="cream" data-font="lexend" data-size="m" data-motion="full">
 
 <a href="#main" class="skip">Skip to main content</a>
 
@@ -80,11 +80,9 @@
         <div class="hero-content">
           <div class="hero-text">
             <p class="hero-eyebrow"><span id="helloGreeting">Welcome back</span></p>
-            <h1 id="home-title"><span id="helloName">Reader</span>.</h1>
+            <h1 id="home-title"><span id="helloName">Jasmine</span><span class="name-dot">.</span></h1>
             <p class="hero-sub" id="helloLine">Pick something to read at your own pace. Nothing here is timed, and your settings travel with you across every page.</p>
 
-
-            <div class="hero-books" aria-hidden="true"><span style="height:52px;background:#3D5CFF;"></span><span style="height:44px;background:#FF7C24;"></span><span style="height:56px;background:#2F8F6E;"></span><span style="height:40px;background:#E66B8E;"></span><span style="height:50px;background:#FFB400;"></span><span style="height:46px;background:#6E45B5;"></span><span style="height:38px;background:#3D5CFF;"></span><span style="height:54px;background:#2F8F6E;"></span><span style="height:48px;background:#FF7C24;"></span><span style="height:42px;background:#9B7BC9;"></span><span style="height:50px;background:#E66B8E;"></span></div>
             <div class="hero-progress">
               <div class="progress-row">
                 <span id="readCountLabel"></span>
@@ -99,6 +97,17 @@
               <button class="btn lg" id="continueBtn" data-voice="Continue reading">Continue reading →</button>
               <button class="btn ghost" id="openPrefsBtn" data-voice="Reading preferences" data-i18n="reading_prefs">⚙ Reading preferences</button>
               <button class="edit-name-link" id="editName" data-voice="Change name" data-i18n="change_name">Not me? Change name</button>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-orb">
+              <span class="orb-ring orb-ring-1"></span>
+              <span class="orb-ring orb-ring-2"></span>
+              <span class="avatar av-blue" id="helloAvatar">🦊</span>
+              <span class="float-chip chip-book">📖</span>
+              <span class="float-chip chip-star">⭐</span>
+              <span class="float-chip chip-leaf">🌱</span>
             </div>
           </div>
 
@@ -120,20 +129,23 @@
       <!-- Preferences (collapsed; opened by the hero's "Reading preferences" button) -->
       <details class="prefs" id="prefsPanel">
         <summary data-voice="Reading preferences">
-          <span data-i18n="prefs_title">Reading preferences</span>
-          <span class="hint" data-i18n="prefs_hint">Change anything. Every page remembers.</span>
-          <span class="chev" aria-hidden="true">▾</span>
+          <span class="sum-icon" aria-hidden="true">⚙</span>
+          <span class="sum-text">
+            <span class="sum-title" data-i18n="prefs_title">Reading preferences</span>
+            <span class="hint" data-i18n="prefs_hint">Change anything. Every page remembers.</span>
+          </span>
+          <span class="sum-toggle" aria-hidden="true"><span class="chev">▾</span></span>
         </summary>
         <div class="prefs-body">
 
           <div class="pref-group">
             <div class="pref-label">
               <h4 data-i18n="font">Font</h4>
-              <span class="pref-value" id="lblFont">Atkinson Hyperlegible</span>
+              <span class="pref-value" id="lblFont">Lexend</span>
             </div>
             <div class="chips" role="radiogroup" aria-label="Font">
-              <button class="chip" role="radio" aria-checked="true" aria-pressed="true" data-set="font" data-value="atkinson" data-voice="Atkinson font">Atkinson</button>
-              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="font" data-value="lexend" data-voice="Lexend font">Lexend</button>
+              <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="font" data-value="atkinson" data-voice="Atkinson font">Atkinson</button>
+              <button class="chip" role="radio" aria-checked="true" aria-pressed="true" data-set="font" data-value="lexend" data-voice="Lexend font">Lexend</button>
               <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="font" data-value="opendys" data-voice="Open Dyslexic font">OpenDyslexic</button>
               <button class="chip" role="radio" aria-checked="false" aria-pressed="false" data-set="font" data-value="system" data-voice="System font">System</button>
             </div>
@@ -226,9 +238,12 @@
       <!-- Filter panel (Figma "Search Filter" modal, now an inline collapsible) -->
       <details class="filter-panel" id="filterPanel">
         <summary data-voice="Find passages that fit you">
-          <span data-i18n="filter_title">Find passages that fit you</span>
-          <span class="hint" id="filterHint">Filter by language, learning need, or grade.</span>
-          <span class="chev" aria-hidden="true">▾</span>
+          <span class="sum-icon filter-icon" aria-hidden="true">🔍</span>
+          <span class="sum-text">
+            <span class="sum-title" data-i18n="filter_title">Find passages that fit you</span>
+            <span class="hint" id="filterHint">Filter by language, learning need, or grade.</span>
+          </span>
+          <span class="sum-toggle" aria-hidden="true"><span class="chev">▾</span></span>
         </summary>
         <div class="filter-body">
           <div class="filter-group">
@@ -275,75 +290,33 @@
         </div>
       </details>
 
-      <!-- Library — category tiles + per-category sections -->
+      <!-- Library — category tiles act as filters over one clean grid -->
       <div class="library" id="library">
-        <div class="cat-tiles">
-          <a href="#grid-stories" class="cat-tile" data-voice="Stories category">
-            <span class="cat-badge">Category</span>
-            <h3 data-i18n="cat_stories">Stories</h3>
-            <div class="cat-count" id="cnt-stories">3 passages</div>
-          </a>
-          <a href="#grid-science" class="cat-tile warm" data-voice="Science category">
-            <span class="cat-badge">Category</span>
-            <h3 data-i18n="cat_science">Science</h3>
-            <div class="cat-count" id="cnt-science">3 passages</div>
-          </a>
-          <a href="#grid-sky" class="cat-tile lav" data-voice="Sky and stars category">
-            <span class="cat-badge">Category</span>
-            <h3 data-i18n="cat_sky">Sky &amp; stars</h3>
-            <div class="cat-count" id="cnt-sky">2 passages</div>
-          </a>
+        <div class="lib-stats" id="libStats" role="list" aria-label="Library overview">
+          <div class="stat-card s-blue" role="listitem">
+            <span class="stat-ic" aria-hidden="true">📚</span>
+            <span class="stat-text"><span class="stat-num" id="statTotal">8</span><span class="stat-label">Passages</span></span>
+          </div>
+          <div class="stat-card s-green" role="listitem">
+            <span class="stat-ic" aria-hidden="true">✓</span>
+            <span class="stat-text"><span class="stat-num" id="statRead">0</span><span class="stat-label">Read</span></span>
+          </div>
+          <div class="stat-card s-purple" role="listitem">
+            <span class="stat-ic" aria-hidden="true">🗂</span>
+            <span class="stat-text"><span class="stat-num" id="statCats">3</span><span class="stat-label">Categories</span></span>
+          </div>
+          <div class="stat-card s-warm" role="listitem">
+            <span class="stat-ic" aria-hidden="true">⏱</span>
+            <span class="stat-text"><span class="stat-num" id="statTime">~30</span><span class="stat-label">Minutes total</span></span>
+          </div>
         </div>
 
-        <div class="cat-section cat-stories">
-          <div class="cat-section-head">
-            <span class="cat-section-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#3D5CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-              </svg>
-            </span>
-            <div class="cat-section-text">
-              <h2 id="grid-stories-h" data-i18n="cat_stories">Stories</h2>
-              <p class="cat-tagline" data-i18n="tag_stories">Short tales worth carrying with you.</p>
-            </div>
-            <span class="cat-count-pill" id="cnt-stories-pill">3 passages</span>
-          </div>
-          <div class="lib-grid" data-cat="stories" id="grid-stories" role="list"></div>
+        <div class="lib-carousel">
+          <button type="button" class="carousel-nav prev" id="libPrev" aria-label="Scroll left" data-voice="Previous passages">‹</button>
+          <div class="lib-grid lib-track" id="grid-all" role="list"></div>
+          <button type="button" class="carousel-nav next" id="libNext" aria-label="Scroll right" data-voice="More passages">›</button>
         </div>
-
-        <div class="cat-section cat-science">
-          <div class="cat-section-head">
-            <span class="cat-section-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="#2F8F6E" stroke="#1F6A52" stroke-width="1.2" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-12V4l-8 2-8-2v6c0 8 8 12 8 12z"/>
-                <path d="M12 6v16" stroke="#1F6A52" fill="none" stroke-width="1.2"/>
-              </svg>
-            </span>
-            <div class="cat-section-text">
-              <h2 id="grid-science-h" data-i18n="cat_science">Science</h2>
-              <p class="cat-tagline" data-i18n="tag_science">How the world quietly works.</p>
-            </div>
-            <span class="cat-count-pill" id="cnt-science-pill">3 passages</span>
-          </div>
-          <div class="lib-grid" data-cat="science" id="grid-science" role="list"></div>
-        </div>
-
-        <div class="cat-section cat-sky">
-          <div class="cat-section-head">
-            <span class="cat-section-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="#fff" stroke="#6E45B5" stroke-width="1.6" stroke-linejoin="round">
-                <path d="M19 14a8 8 0 0 1-11-11 9 9 0 1 0 11 11z"/>
-              </svg>
-            </span>
-            <div class="cat-section-text">
-              <h2 id="grid-sky-h" data-i18n="cat_sky">Sky &amp; stars</h2>
-              <p class="cat-tagline" data-i18n="tag_sky">What's overhead, and why.</p>
-            </div>
-            <span class="cat-count-pill" id="cnt-sky-pill">2 passages</span>
-          </div>
-          <div class="lib-grid" data-cat="sky" id="grid-sky" role="list"></div>
-        </div>
+        <div class="carousel-dots" id="libDots" aria-hidden="true"></div>
       </div>
 
       </div>
@@ -540,13 +513,13 @@ const AVATAR_LABELS = { blue: "Blue", green: "Green", warm: "Orange", sun: "Yell
    STATE
    ========================================================================= */
 const DEFAULTS = {
-  font: "atkinson", size: "m", contrast: "cream", motion: "full",
+  font: "lexend", size: "m", contrast: "cream", motion: "full",
   lang: "en",
   audio: true, voiceCues: false, pace: 0.9,
   profile: null,                  // { name, avatar }
   read: {},                       // { passageId: ISO date }
   reflections: {},                // { passageId: "note text" }
-  triedFonts: ["atkinson"],
+  triedFonts: ["lexend"],
   triedContrasts: ["cream"],
   usedAudioOnce: false,
   minPace: 0.9,
@@ -583,7 +556,7 @@ function loadState() {
     return { ...DEFAULTS, ...parsed,
       read: parsed.read || {},
       reflections: parsed.reflections || {},
-      triedFonts: parsed.triedFonts || [parsed.font || "atkinson"],
+      triedFonts: parsed.triedFonts || [parsed.font || "lexend"],
       triedContrasts: parsed.triedContrasts || [parsed.contrast || "cream"],
       achievements: parsed.achievements || {}
     };
@@ -686,14 +659,15 @@ document.getElementById('setupSkip').addEventListener('click', () => {
    DASHBOARD
    ========================================================================= */
 function renderHello() {
-  const p = state.profile || { name: 'Reader', avatar: 'blue' };
+  const p = state.profile || { name: 'Jasmine', avatar: 'blue' };
   // The hero avatar element was removed; guard in case it's added back later.
   const avEl = document.getElementById('helloAvatar');
   if (avEl) {
     avEl.className = 'avatar av-' + p.avatar;
     avEl.textContent = AVATAR_EMOJI[p.avatar] || '🦊';
   }
-  document.getElementById('helloName').textContent = p.name + '.';
+  const displayName = (p.name && p.name !== 'Reader') ? p.name : 'Jasmine';
+  document.getElementById('helloName').textContent = displayName;
 
   const hour = new Date().getHours();
   const readCount = Object.keys(state.read).length;
@@ -795,56 +769,137 @@ function passesFilters(p) {
   if (filterState.need.size && ![...filterState.need].some(n => p.needs.includes(n))) return false;
   return true;
 }
+function updateLibStats() {
+  const ids = new Set(PASSAGES.map(p => p.id));
+  const total = PASSAGES.length;
+  const read = Object.keys(state.read).filter(id => ids.has(id)).length;
+  const cats = new Set(PASSAGES.map(p => p.cat)).size;
+  const mins = PASSAGES.reduce((s, p) => s + (p.minutes || 0), 0);
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('statTotal', total);
+  set('statRead', read);
+  set('statCats', cats);
+  set('statTime', '~' + mins);
+}
+
 function renderLibrary() {
-  const byCat = {};
-  PASSAGES.forEach(p => { (byCat[p.cat] = byCat[p.cat] || []).push(p); });
-  let totalVisible = 0;
-  Object.keys(byCat).forEach(cat => {
-    const grid = document.getElementById('grid-' + cat);
-    const count = document.getElementById('cnt-' + cat);
-    const countPill = document.getElementById('cnt-' + cat + '-pill');
-    if (!grid) return;
-    grid.innerHTML = '';
-    const visible = byCat[cat].filter(passesFilters);
-    totalVisible += visible.length;
-    const label = visible.length === 1 ? t('one_passage') : t('n_passages', { n: visible.length });
-    if (count) count.textContent = label;
-    if (countPill) countPill.textContent = label;
-    const section = grid.closest('.cat-section');
-    if (section) section.style.display = visible.length ? '' : 'none';
-    visible.forEach(p => {
-      const lp = L(p);
-      const done = !!state.read[p.id];
-      const card = document.createElement('button');
-      card.className = 'passage-card p-' + p.cat;
-      card.setAttribute('role', 'listitem');
-      card.setAttribute('data-voice', lp.title);
-      const icon = PASSAGE_ICONS[p.id] || '';
-      card.innerHTML = `
-        <div class="meta">
-          <span>${t('min_label', { n: p.minutes })}</span>
-          <span class="dot">·</span>
-          <span>${t('level_' + p.level)}</span>
-        </div>
-        <div class="p-title-row">
-          ${icon ? `<span class="p-icon" aria-hidden="true">${icon}</span>` : ''}
-          <h3>${lp.title}</h3>
-        </div>
-        <p class="preview">${(lp.paragraphs[0] || '').slice(0, 110)}…</p>
-        ${done ? `<div class="done">${t('read_done')}</div>` : ''}
-      `;
-      card.addEventListener('click', () => openPassage(p.id));
-      grid.appendChild(card);
-    });
+  const grid = document.getElementById('grid-all');
+  if (!grid) return;
+
+  updateLibStats();
+
+  // Render every visible passage into the carousel.
+  const visible = PASSAGES.filter(passesFilters);
+  grid.innerHTML = '';
+  visible.forEach(p => {
+    const lp = L(p);
+    const done = !!state.read[p.id];
+    const card = document.createElement('button');
+    card.className = 'passage-card p-' + p.cat;
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('data-voice', lp.title);
+    const icon = PASSAGE_ICONS[p.id] || '';
+    const preview = (lp.paragraphs[0] || '').replace(/\s+/g, ' ').trim().slice(0, 140);
+    const needsTags = (p.needs || [])
+      .map(n => `<span class="p-tag t-${n}">${t('need_' + n)}</span>`)
+      .join('');
+    card.innerHTML = `
+      <div class="p-top">
+        ${icon ? `<span class="p-icon" aria-hidden="true">${icon}</span>` : ''}
+        <span class="p-cat-label">${t('cat_' + p.cat)}</span>
+        ${done ? `<span class="p-done-badge" aria-label="${t('read_done')}">✓</span>` : ''}
+      </div>
+      <h3>${lp.title}</h3>
+      <p class="preview">${preview}…</p>
+      ${needsTags ? `<div class="p-tags">${needsTags}</div>` : ''}
+      <div class="p-foot">
+        <span class="p-foot-item"><span class="fi-ic" aria-hidden="true">⏱</span>${t('min_label', { n: p.minutes })}</span>
+        <span class="p-foot-item"><span class="fi-ic" aria-hidden="true">📈</span>${t('level_' + p.level)}</span>
+        <span class="p-foot-item"><span class="fi-ic" aria-hidden="true">🎓</span>${p.gmin}–${p.gmax}</span>
+      </div>
+    `;
+    card.addEventListener('click', () => openPassage(p.id));
+    grid.appendChild(card);
   });
+
+  // Empty state.
   const lib = document.getElementById('library');
   let emptyEl = document.getElementById('libEmpty');
-  if (totalVisible === 0) {
+  if (visible.length === 0) {
     if (!emptyEl) { emptyEl = document.createElement('p'); emptyEl.id = 'libEmpty'; emptyEl.className = 'lib-empty'; lib.appendChild(emptyEl); }
     emptyEl.textContent = t('empty_shelf');
     emptyEl.style.display = '';
   } else if (emptyEl) { emptyEl.style.display = 'none'; }
+
+  buildCarouselDots();
+  updateCarouselNav();
 }
+
+/* Library carousel — arrow navigation, dot indicators, edge state. */
+function updateCarouselNav() {
+  const track = document.getElementById('grid-all');
+  const prev = document.getElementById('libPrev');
+  const next = document.getElementById('libNext');
+  if (track && prev && next) {
+    const max = track.scrollWidth - track.clientWidth - 2;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max;
+  }
+  updateActiveDot();
+}
+function scrollToCard(card) {
+  const track = document.getElementById('grid-all');
+  if (!track || !card) return;
+  const left = card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
+  track.scrollTo({ left, behavior: state.motion === 'none' ? 'auto' : 'smooth' });
+}
+function buildCarouselDots() {
+  const track = document.getElementById('grid-all');
+  const dots = document.getElementById('libDots');
+  if (!track || !dots) return;
+  const cards = track.querySelectorAll('.passage-card');
+  dots.innerHTML = '';
+  dots.style.display = cards.length > 1 ? '' : 'none';
+  cards.forEach((card, i) => {
+    const d = document.createElement('button');
+    d.type = 'button';
+    d.className = 'carousel-dot';
+    d.setAttribute('aria-label', 'Go to passage ' + (i + 1));
+    d.addEventListener('click', () => scrollToCard(card));
+    dots.appendChild(d);
+  });
+}
+function updateActiveDot() {
+  const track = document.getElementById('grid-all');
+  const dots = document.getElementById('libDots');
+  if (!track || !dots) return;
+  const cards = track.querySelectorAll('.passage-card');
+  const dotEls = dots.querySelectorAll('.carousel-dot');
+  if (!cards.length) return;
+  const trackLeft = track.getBoundingClientRect().left;
+  let activeIdx = 0, min = Infinity;
+  cards.forEach((c, i) => {
+    const dist = Math.abs(c.getBoundingClientRect().left - trackLeft);
+    if (dist < min) { min = dist; activeIdx = i; }
+  });
+  dotEls.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+}
+function scrollCarousel(dir) {
+  const track = document.getElementById('grid-all');
+  if (!track) return;
+  const card = track.querySelector('.passage-card');
+  const step = card ? card.offsetWidth + 32 : 340;
+  track.scrollBy({ left: dir * step, behavior: state.motion === 'none' ? 'auto' : 'smooth' });
+}
+(function wireCarousel() {
+  const track = document.getElementById('grid-all');
+  const prev = document.getElementById('libPrev');
+  const next = document.getElementById('libNext');
+  if (prev) prev.addEventListener('click', () => scrollCarousel(-1));
+  if (next) next.addEventListener('click', () => scrollCarousel(1));
+  if (track) track.addEventListener('scroll', updateCarouselNav, { passive: true });
+  window.addEventListener('resize', updateCarouselNav);
+})();
 
 /* =========================================================================
    READER + SPEECH
